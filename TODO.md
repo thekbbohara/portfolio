@@ -3,25 +3,25 @@
 ### Frontend first.
 
 - [ ] 1.Create components:
-  - [ ] a.Button.tsx
-  - [ ] b.Card.tsx
-  - [ ] c.Check.tsx
-  - [ ] d.Star.tsx
-  - [ ] e.IconBox.tsx
-  - [ ] f.TechnologiesLogos.tsx
-  - [ ] g.TechnologiesRow.tsx
-  - [ ] h.HeaderText.tsx
-  - [ ] i.SocialMedia.tsx
-  - [ ] j.Comments.tsx
-  - [ ] k.Header.tsx
-  - [ ] h.Footer.tsx
-  - [ ] j.MobileMenu.tsx
-  - [ ] k.CodeSnippet.tsx
+  - [ ] Button.tsx
+  - [ ] Card.tsx
+  - [ ] Check.tsx
+  - [ ] Star.tsx
+  - [ ] IconBox.tsx
+  - [ ] TechnologiesLogos.tsx
+  - [ ] TechnologiesRow.tsx
+  - [ ] HeaderText.tsx
+  - [ ] SocialMedia.tsx
+  - [ ] Comments.tsx
+  - [ ] Header.tsx
+  - [ ] Footer.tsx
+  - [ ] MobileMenu.tsx
+  - [ ] CodeSnippet.tsx
 
 ### Mobile First...
 
 - [ ] 2.Pages:
-  - [ ] a.Home.tsx
-  - [ ] b.AboutMe.tsx
-  - [ ] c.Projects.tsx
-  - [ ] d.ContactMe.tsx
+  - [ ] Home.tsx
+  - [ ] AboutMe.tsx
+  - [ ] Projects.tsx
+  - [ ] ContactMe.tsx
