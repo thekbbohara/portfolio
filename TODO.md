@@ -21,6 +21,12 @@
   - [ ] AboutMeSidebar.tsx
   - [ ] ProjectFilterSidebar.tsx
   - [ ] ContactMeSidebar.tsx
+  ### SnakeGame
+  - [ ] GameBoard.tsx
+  - [ ] GameCanvas.tsx
+  - [ ] GameGuide.tsx
+  - [ ] Food.tsx
+  - [ ] FoodLeft.tsx
 
 ### Mobile First...
 
