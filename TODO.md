@@ -17,6 +17,10 @@
   - [ ] Footer.tsx
   - [ ] MobileMenu.tsx
   - [ ] CodeSnippet.tsx
+  ### Sidebars
+  - [ ] AboutMeSidebar.tsx
+  - [ ] ProjectFilterSidebar.tsx
+  - [ ] ContactMeSidebar.tsx
 
 ### Mobile First...
 
