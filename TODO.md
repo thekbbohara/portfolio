@@ -3,6 +3,7 @@
 ### Frontend first.
 
 - [ ] 1.Create components:
+  ### UI
   - [ ] Button.tsx
   - [ ] Card.tsx
   - [ ] Check.tsx
@@ -13,10 +14,11 @@
   - [ ] HeaderText.tsx
   - [ ] SocialMedia.tsx
   - [ ] Comments.tsx
+  - [ ] CodeSnippet.tsx
+  ### Navbar
   - [ ] Header.tsx
   - [ ] Footer.tsx
   - [ ] MobileMenu.tsx
-  - [ ] CodeSnippet.tsx
   ### Sidebars
   - [ ] AboutMeSidebar.tsx
   - [ ] ProjectFilterSidebar.tsx
