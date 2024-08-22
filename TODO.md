@@ -4,7 +4,7 @@
 
 ### utils
 
--[ ] cn.ts
+- [x] cn.ts
 
 - [ ] 1.Create components:
   ### UI
