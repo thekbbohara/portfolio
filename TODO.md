@@ -1,5 +1,7 @@
 ## TODOs!
 
+### Frontend first.
+
 - [ ] 1.Create components:
   - [ ] a.Button.tsx
   - [ ] b.Card.tsx
