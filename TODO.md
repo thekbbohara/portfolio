@@ -8,7 +8,7 @@
 
 - [ ] 1.Create components:
   ### UI
-  - [ ] Button.tsx
+  - [x] Buttons.tsx
   - [ ] Card.tsx
   - [ ] Check.tsx
   - [ ] Star.tsx
