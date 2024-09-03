@@ -7,7 +7,12 @@ const About = () => {
     <section className="grow h-full  flex relative">
       <div className="grow flex">
         <AsideAbout />
-        <ProfessionalInfo />
+        <div className="flex justify-between grow">
+          <ProfessionalInfo />
+          <div className="h-full w-4 border border-y-transparen border-line">
+            <div className="w-full h-2 bg-s1 mt-2"></div>
+          </div>
+        </div>
       </div>
     </section>
   );
