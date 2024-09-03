@@ -20,8 +20,8 @@
   - [ ] Comments.tsx
   - [ ] CodeSnippet.tsx
   ### Navbar
-  - [ ] Header.tsx
-  - [ ] Footer.tsx
+  - [x] Header.tsx
+  - [x] Footer.tsx
   - [ ] MobileMenu.tsx
   ### Sidebars
   - [ ] AboutMeSidebar.tsx
