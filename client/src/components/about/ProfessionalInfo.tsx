@@ -13,7 +13,7 @@ const ProfessionalInfo = () => {
     "* loves typescript",
     "* Runtime: bun && node",
     "* Frameworks: Nextjs, express.js, Hono,",
-    "* Libraries: React, Zustand, Redux, Zod, React Query",
+    "* Libraries: React, Zustand, Redux, Zod, React Query,socket.io",
     "* Databases & Caching: MongoDB, Redis",
     "* Styling: tailwind css,",
     "* UI components: spfyui",

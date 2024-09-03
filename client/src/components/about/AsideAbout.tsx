@@ -28,7 +28,7 @@ const AsideAbout = () => {
     },
   ];
   const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "personal";
+  const category = searchParams.get("category") || "professional";
   return (
     <aside className="h-full w-fit flex flex-shrink-0">
       <ul className="px-6 w-fit h-full flex flex-col py-4 gap-4 border border-transparent border-r-line">
@@ -54,7 +54,9 @@ const AsideAbout = () => {
             <li className="flex gap-1 px-2">
               <MailFill /> thekbbohara@gmail.com
             </li>
-            <li className="flex gap-1 px-2"><PhoneFill /> +9779748225937</li>
+            <li className="flex gap-1 px-2">
+              <PhoneFill /> +9779748225937
+            </li>
           </ul>
         </div>
       </div>
