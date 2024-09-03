@@ -69,7 +69,7 @@ const AsideAbout = () => {
           </li>
         ))}
       </ul>
-      <div className="flex flex-col   border border-transparent border-r-line">
+      <div className="hidden md:flex flex-col   border border-transparent border-r-line">
         <div className="grow  ">
           <header className="flex text-s4 border border-transparent border-b-line px-4 py-2">
             <ArrowDownSFill className="text-s4" />

@@ -21,7 +21,7 @@ const ProfessionalInfo = () => {
   ];
   info.push("*/");
   return (
-    <article className="py-4 px-10 text-s1">
+    <article className="py-8 px-10 text-s1">
       {info.map((p, id) => (
         <div key={id} className={cn("flex gap-4")}>
           <span className="select-none w-[2ch] text-end">{id + 1}</span>
