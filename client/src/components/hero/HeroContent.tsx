@@ -14,8 +14,12 @@ const HeroContent = () => {
         </em>
       </h1>
       <div>
-        <p className="text-s1">// complete the game to continue</p>
-        <p className="text-s1">// you can also see it on my Github page</p>
+        <p className="text-s1">
+          {"// complete the game to continue".toString()}
+        </p>
+        <p className="text-s1">
+          {"// you can also see it on my Github page".toString()}
+        </p>
         <p>
           <span className="text-s3">const</span>{" "}
           <span className="text-s2">githubLink</span>{" "}

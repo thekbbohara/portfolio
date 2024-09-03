@@ -1,7 +1,8 @@
 import cn from "@/utils/cn";
 import React from "react";
+import SubHeader from "../ui/SubHeader";
 
-const ProfessionalInfo = () => {
+const ProfessionalInfo = ({ category }: { category: string }) => {
   const date = new Date();
   const info: string[] = [
     "/**",
@@ -21,14 +22,17 @@ const ProfessionalInfo = () => {
   ];
   info.push("*/");
   return (
-    <article className="py-8 px-10 text-s1">
-      {info.map((p, id) => (
-        <div key={id} className={cn("flex gap-4")}>
-          <span className="select-none w-[2ch] text-end">{id + 1}</span>
-          <span className={cn(id !== 0 && "pl-3")}>{p}</span>
-        </div>
-      ))}
-    </article>
+    <div className="w-full">
+      <SubHeader category={category} className="text-s1" showIcon={false} />
+      <article className="py-8 px-10 text-s1">
+        {info.map((p, id) => (
+          <div key={id} className={cn("flex gap-4")}>
+            <span className="select-none w-[2ch] text-end">{id + 1}</span>
+            <span className={cn(id !== 0 && "pl-3")}>{p}</span>
+          </div>
+        ))}
+      </article>
+    </div>
   );
 };
 export default ProfessionalInfo;

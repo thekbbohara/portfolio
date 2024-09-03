@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import {
-  ArrowDownSFill,
   Folder5Fill,
   GamepadFill,
   MailFill,
@@ -12,7 +11,7 @@ import {
 } from "@/assets/spfyicons";
 import cn from "@/utils/cn";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import SubHeader from "../ui/SubHeader";
 const about_category: { query: string; icon: React.ReactNode }[] = [
   {
     query: "professional",
@@ -33,9 +32,7 @@ interface TsubCategory {
   icon: React.ReactNode;
   subInfo?: { subName: string; subIcon: React.ReactNode }[];
 }
-const AsideAbout = () => {
-  const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "professional";
+const AsideAbout = ({ category }: { category: string }) => {
   const subCategory: TsubCategory[] = [
     {
       type: "personal",
@@ -71,10 +68,11 @@ const AsideAbout = () => {
       </ul>
       <div className="hidden md:flex flex-col   border border-transparent border-r-line">
         <div className="grow  ">
-          <header className="flex text-s4 border border-transparent border-b-line px-4 py-2">
-            <ArrowDownSFill className="text-s4" />
-            {category}-info
-          </header>
+          {/* <header className="flex text-s4 border border-transparent border-b-line px-4 py-2">
+              <ArrowDownSFill className="text-s4" />
+                {category}-info
+            </header> */}
+          <SubHeader category={category} />
           <ul className="py-3 cursor-default">
             {subCategory.map(({ type, name, icon, subInfo }, id) => (
               <li key={id} className="flex flex-col gap-1 px-2">
@@ -95,7 +93,7 @@ const AsideAbout = () => {
                 </Link>
                 <ul className={cn(category !== type && "h-0 opacity-0")}>
                   {subInfo?.map(({ subName, subIcon }, id: number) => (
-                    <li className={cn("flex pl-4")} key={id}>
+                    <li className={cn("flex pl-6")} key={id}>
                       {subIcon}
                       {subName}
                     </li>
@@ -106,10 +104,10 @@ const AsideAbout = () => {
           </ul>
         </div>
         <div className="grow">
-          <header className="flex text-s4 gap-[1px] border border-transparent border-y-line px-4 py-2">
+          {/* <header className="flex text-s4 gap-[1px] border border-transparent border-y-line px-4 py-2">
             <ArrowDownSFill className="text-s4" />
-            contact-info
-          </header>
+          </header> */}
+          <SubHeader category="contact" className="border-t-line" />
           <ul className="flex flex-col mt-4 gap-2">
             <li className="flex gap-1 px-2">
               <MailFill /> thekbbohara@gmail.com

@@ -1,14 +1,19 @@
+"use client";
 import AsideAbout from "@/components/about/AsideAbout";
 import ProfessionalInfo from "@/components/about/ProfessionalInfo";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 
 const About = () => {
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category") || "personal";
+
   return (
     <section className="grow h-full  flex relative">
       <div className="grow flex">
-        <AsideAbout />
+        <AsideAbout category={category} />
         <div className="flex justify-between grow">
-          <ProfessionalInfo />
+          <ProfessionalInfo category={category} />
           <div className="h-full w-4 border border-y-transparen border-line">
             <div className="w-full h-2 bg-s1 mt-2"></div>
           </div>
