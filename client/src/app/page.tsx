@@ -1,9 +1,4 @@
-import Button from "@/components/ui/Buttons";
-
+import Hero from "@/components/hero/Hero";
 export default function Home() {
-  return (
-    <main className="bg-p2 min-h-svh w-full">
-      <Button theme="default">start-game</Button>
-    </main>
-  );
+  return <Hero />;
 }

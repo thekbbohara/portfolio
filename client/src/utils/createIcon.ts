@@ -23,7 +23,10 @@ export const createIcon = (svgData: svgReturnType): React.FC<IconProps> => {
         xmlns: "http://www.w3.org/2000/svg",
         width: size,
         height: size,
-        className: cn("w-6 h-6 flex justify-center items-center", className),
+        className: cn(
+          "w-6 h-6 text-s1 flex justify-center items-center",
+          className,
+        ),
         ...restProps,
       },
       svgData.path.map((p, i) =>
