@@ -29,7 +29,7 @@ const Card = ({
           height={150}
           width={384}
           alt={alt}
-          className="max-w-[370px]  w-full object-cover"
+          className="max-w-[370px] hover:scale-100 scale-105 w-full object-cover"
         />
         <i>{primaryTech}</i>
       </div>
