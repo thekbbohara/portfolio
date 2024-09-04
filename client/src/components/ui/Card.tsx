@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link, { LinkProps } from "next/link";
-import React, { ReactElement } from "react";
+import React from "react";
 import Button from "./Buttons";
 
 interface CardProps extends LinkProps {
   img: string;
   alt: string;
-  children: ReactElement<"p">;
+  children: string;
   primaryTech?: React.ReactSVGElement;
 }
 const Card = ({
@@ -35,7 +35,7 @@ const Card = ({
       </div>
       <div className="px-6 py-4 flex flex-col gap-3 self-center">
         <p>{children}</p>
-        <Button className="max-w-fit">view-poroject</Button>
+        <Button className="max-w-fit ">view-poroject</Button>
       </div>
     </Link>
   );

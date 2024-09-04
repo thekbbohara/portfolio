@@ -1,6 +1,5 @@
 import ProjectContainer from "@/components/project/ProjectContainer";
 import ProjectSidebar from "@/components/project/ProjectSidebar";
-import CheckBox from "@/components/ui/CheckBox";
 import React from "react";
 
 const Projects = () => {
