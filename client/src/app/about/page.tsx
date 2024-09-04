@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense } from "react";
 import AsideAbout from "@/components/about/AsideAbout";
-import ProfessionalInfo from "@/components/about/ProfessionalInfo";
+import Bio from "@/components/about/Bio";
 import { useSearchParams } from "next/navigation";
 
 const AboutContent = () => {
@@ -13,7 +13,7 @@ const AboutContent = () => {
       <div className="grow flex">
         <AsideAbout category={category} />
         <div className="flex justify-between grow">
-          <ProfessionalInfo category={category} />
+          <Bio category={category} />
           <div className="h-full w-4 border border-y-transparen border-line">
             <div className="w-full h-2 bg-s1 mt-2"></div>
           </div>

@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import {
+  CodeSSlashFill,
+  FileMusicFill,
+  FileTextFill,
   Folder5Fill,
   GamepadFill,
   MailFill,
@@ -38,22 +41,28 @@ const AsideAbout = ({ category }: { category: string }) => {
       type: "personal",
       name: "bio",
       icon: <Folder5Fill className="text-a3" />,
-      subInfo: [{ subName: "about", subIcon: <MarkdownFill /> }],
+      subInfo: [
+        { subName: "about", subIcon: <MarkdownFill className="size-5" /> },
+      ],
     },
     {
       type: "hobbies",
       name: "interests",
       icon: <Folder5Fill className="text-a2" />,
-      subInfo: [{ subName: "anime", subIcon: <MarkdownFill /> }],
+      subInfo: [
+        { subName: "books", subIcon: <FileTextFill className="size-5" /> },
+        { subName: "coding", subIcon: <CodeSSlashFill className="size-5" /> },
+        { subName: "music", subIcon: <FileMusicFill className="size-5" /> },
+      ],
     },
     {
       type: "professional",
       name: "education",
       icon: <Folder5Fill className="text-s3" />,
       subInfo: [
-        { subName: "school", subIcon: <MarkdownFill /> },
-        { subName: "bootcamp", subIcon: <MarkdownFill /> },
-        { subName: "collage", subIcon: <MarkdownFill /> },
+        { subName: "school", subIcon: <MarkdownFill className="size-5" /> },
+        { subName: "bootcamp", subIcon: <MarkdownFill className="size-5" /> },
+        { subName: "collage", subIcon: <MarkdownFill className="size-5" /> },
       ],
     },
   ];
@@ -68,10 +77,6 @@ const AsideAbout = ({ category }: { category: string }) => {
       </ul>
       <div className="hidden md:flex flex-col   border border-transparent border-r-line">
         <div className="grow  ">
-          {/* <header className="flex text-s4 border border-transparent border-b-line px-4 py-2">
-              <ArrowDownSFill className="text-s4" />
-                {category}-info
-            </header> */}
           <SubHeader category={category} />
           <ul className="py-3 cursor-default">
             {subCategory.map(({ type, name, icon, subInfo }, id) => (
@@ -82,7 +87,7 @@ const AsideAbout = ({ category }: { category: string }) => {
                 >
                   <span
                     className={cn(
-                      "font-semibold ",
+                      "font-semibold transition-transform",
                       category === type && "rotate-90",
                     )}
                   >
@@ -92,7 +97,10 @@ const AsideAbout = ({ category }: { category: string }) => {
                   <span>{name}</span>
                 </Link>
                 <ul
-                  className={cn(category !== type && "h-0 opacity-0 invisible")}
+                  className={cn(
+                    category !== type ? "h-0 opacity-0 invisible" : "h-full",
+                    "transition-[height] ease-linear",
+                  )}
                 >
                   {subInfo?.map(({ subName, subIcon }, id: number) => (
                     <li className={cn("flex pl-6")} key={id}>
@@ -106,9 +114,6 @@ const AsideAbout = ({ category }: { category: string }) => {
           </ul>
         </div>
         <div className="grow">
-          {/* <header className="flex text-s4 gap-[1px] border border-transparent border-y-line px-4 py-2">
-            <ArrowDownSFill className="text-s4" />
-          </header> */}
           <SubHeader category="contact" className="border-t-line" />
           <ul className="flex flex-col mt-4 gap-2">
             <li className="flex gap-1 px-2">
