@@ -1,15 +1,15 @@
 "use client";
+import React, { Suspense } from "react";
 import AsideAbout from "@/components/about/AsideAbout";
 import ProfessionalInfo from "@/components/about/ProfessionalInfo";
 import { useSearchParams } from "next/navigation";
-import React from "react";
 
-const About = () => {
+const AboutContent = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "personal";
 
   return (
-    <section className="grow h-full  flex relative">
+    <section className="grow h-full flex relative">
       <div className="grow flex">
         <AsideAbout category={category} />
         <div className="flex justify-between grow">
@@ -22,5 +22,11 @@ const About = () => {
     </section>
   );
 };
+
+const About = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <AboutContent />
+  </Suspense>
+);
 
 export default About;

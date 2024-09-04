@@ -91,7 +91,9 @@ const AsideAbout = ({ category }: { category: string }) => {
                   <i>{icon}</i>
                   <span>{name}</span>
                 </Link>
-                <ul className={cn(category !== type && "h-0 opacity-0")}>
+                <ul
+                  className={cn(category !== type && "h-0 opacity-0 invisible")}
+                >
                   {subInfo?.map(({ subName, subIcon }, id: number) => (
                     <li className={cn("flex pl-6")} key={id}>
                       {subIcon}

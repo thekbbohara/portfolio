@@ -1,21 +1,30 @@
+import React from "react";
+import cn from "./cn";
+
 interface IconProps {
   size?: number;
   className?: string;
 }
-import React from "react";
-import cn from "./cn";
+
 type pathType = {
   [key: string]: string;
   d: string;
   fill: string;
 };
+
 type svgReturnType = {
   path: pathType[];
   viewBox: string;
   [key: string]: any;
 };
+
 export const createIcon = (svgData: svgReturnType): React.FC<IconProps> => {
-  return ({ size = 24, className, ...restProps }: IconProps) =>
+  // Create the component
+  const IconComponent: React.FC<IconProps> = ({
+    size = 24,
+    className,
+    ...restProps
+  }: IconProps) =>
     React.createElement(
       "svg",
       {
@@ -33,4 +42,9 @@ export const createIcon = (svgData: svgReturnType): React.FC<IconProps> => {
         React.createElement("path", { d: p.d, key: i, fill: p.fill }),
       ),
     );
+
+  // Assign a display name
+  IconComponent.displayName = "IconComponent";
+
+  return IconComponent;
 };
