@@ -77,7 +77,7 @@ const AsideAbout = ({ category }: { category: string }) => {
       </ul>
       <div className="hidden md:flex flex-col   border border-transparent border-r-line">
         <div className="grow  ">
-          <SubHeader category={category} />
+          <SubHeader category={`${category}-info`} />
           <ul className="py-3 cursor-default">
             {subCategory.map(({ type, name, icon, subInfo }, id) => (
               <li key={id} className="flex flex-col gap-1 px-2">
@@ -114,7 +114,7 @@ const AsideAbout = ({ category }: { category: string }) => {
           </ul>
         </div>
         <div className="grow">
-          <SubHeader category="contact" className="border-t-line" />
+          <SubHeader category="contact-info" className="border-t-line" />
           <ul className="flex flex-col mt-4 gap-2">
             <li className="flex gap-1 px-2">
               <MailFill /> thekbbohara@gmail.com

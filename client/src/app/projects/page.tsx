@@ -1,13 +1,14 @@
+import ProjectContainer from "@/components/project/ProjectContainer";
+import ProjectSidebar from "@/components/project/ProjectSidebar";
 import CheckBox from "@/components/ui/CheckBox";
 import React from "react";
 
 const Projects = () => {
   return (
-    <div>
-      <CheckBox />
-      <br />
-      <CheckBox isChecked />
-    </div>
+    <section className="grow h-full flex">
+      <ProjectSidebar />
+      <ProjectContainer />
+    </section>
   );
 };
 

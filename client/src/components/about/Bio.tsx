@@ -23,7 +23,11 @@ const ProfessionalInfo = ({ category }: { category: string }) => {
   info.push("*/");
   return (
     <div className="w-full">
-      <SubHeader category={category} className="text-s1" showIcon={false} />
+      <SubHeader
+        category={`${category}-info`}
+        className="text-s1"
+        showIcon={false}
+      />
       <article className="py-8 px-10 text-s1">
         {info.map((p, id) => (
           <div key={id} className={cn("flex gap-4")}>

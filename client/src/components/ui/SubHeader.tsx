@@ -19,7 +19,7 @@ const SubHeader = ({
       )}
     >
       {showIcon && <ArrowDownSFill className={cn("text-s4")} />}
-      {category}-info
+      {category}
     </header>
   );
 };
