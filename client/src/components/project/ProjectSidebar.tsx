@@ -2,7 +2,7 @@
 import React from "react";
 import SubHeader from "../ui/SubHeader";
 import CheckLogo from "../ui/CheckLogo";
-import { NextjsFill, ReactjsLine } from "@/assets/spfyicons";
+import { NextjsFill, NodejsLine, ReactjsLine } from "@/assets/spfyicons";
 import { useRouter, useSearchParams } from "next/navigation";
 const ProjectSidebar = () => {
   const searchParams = useSearchParams();
@@ -11,7 +11,6 @@ const ProjectSidebar = () => {
   let filters = [];
   if (filterParam) {
     try {
-      // Replace single quotes with double quotes for valid JSON format
       const jsonString = filterParam.replace(/'/g, '"');
       filters = JSON.parse(jsonString);
     } catch (e) {
@@ -31,11 +30,12 @@ const ProjectSidebar = () => {
   const techStack: { name: string; icon: React.ReactNode }[] = [
     { name: "react", icon: <ReactjsLine /> },
     { name: "nextjs", icon: <NextjsFill /> },
+    { name: "nodejs", icon: <NodejsLine /> },
   ];
   return (
     <aside className="flex flex-col grow min-h-full max-w-64 w-full border border-transparent border-r-line ">
       <SubHeader category="Projects" />
-      <ul className="px-4 py-2">
+      <ul className="px-4 py-4 flex flex-col gap-2">
         {techStack.map(({ name, icon }, id) => (
           <li
             key={id}

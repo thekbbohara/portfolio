@@ -1,12 +1,14 @@
 import ProjectContainer from "@/components/project/ProjectContainer";
 import ProjectSidebar from "@/components/project/ProjectSidebar";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Projects = () => {
   return (
     <section className="grow h-full flex">
-      <ProjectSidebar />
-      <ProjectContainer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProjectSidebar />
+        <ProjectContainer />
+      </Suspense>
     </section>
   );
 };
