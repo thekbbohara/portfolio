@@ -12,7 +12,7 @@ const CheckLogo = ({
 }) => (
   <div className="flex gap-4">
     <CheckBox isChecked={isChecked} />
-    <span className="flex gap-2 cursor-pointer">
+    <span className="flex select-none gap-2 cursor-pointer">
       {icon}
       {name}
     </span>
