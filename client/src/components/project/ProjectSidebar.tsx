@@ -2,7 +2,14 @@
 import React, { useState } from "react";
 import SubHeader from "../ui/SubHeader";
 import CheckLogo from "../ui/CheckLogo";
-import { NextjsFill, NodejsLine, ReactjsLine } from "@/assets/spfyicons";
+import {
+  Bun,
+  Express,
+  Hono,
+  NextjsFill,
+  NodejsLine,
+  ReactjsLine,
+} from "@/assets/spfyicons";
 import { useRouter, useSearchParams } from "next/navigation";
 import cn from "@/utils/cn";
 const ProjectSidebar = () => {
@@ -32,8 +39,10 @@ const ProjectSidebar = () => {
   const techStack: { name: string; icon: React.ReactNode }[] = [
     { name: "react", icon: <ReactjsLine /> },
     { name: "nextjs", icon: <NextjsFill /> },
-    { name: "bun", icon: <NodejsLine /> },
+    { name: "bun", icon: <Bun /> },
     { name: "nodejs", icon: <NodejsLine /> },
+    { name: "hono", icon: <Hono /> },
+    { name: "express", icon: <Express className="fill-s1" /> },
   ];
   return (
     <aside className="flex flex-col grow min-h-full sm:max-w-64  w-full border border-transparent sm:border-r-line ">
@@ -53,7 +62,10 @@ const ProjectSidebar = () => {
         {techStack.map(({ name, icon }, id) => (
           <li
             key={id}
-            className="flex  items-center  border sm:p-0 p-2 sm:border-transparent border-line"
+            className={cn(
+              "flex  items-center  border sm:p-0 p-2 sm:border-transparent border-line",
+              filters?.includes(name) && "text-s4",
+            )}
             onClick={() => {
               handleFilterChange(name);
             }}

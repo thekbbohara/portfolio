@@ -7,9 +7,9 @@ interface IconProps {
 }
 
 type pathType = {
-  [key: string]: string;
+  [key: string]: string | undefined;
   d: string;
-  fill: string;
+  fill?: string;
 };
 
 type svgReturnType = {
@@ -39,7 +39,7 @@ export const createIcon = (svgData: svgReturnType): React.FC<IconProps> => {
         ...restProps,
       },
       svgData.path.map((p, i) =>
-        React.createElement("path", { d: p.d, key: i, fill: p.fill }),
+        React.createElement("path", { d: p?.d, key: i, fill: p?.fill }),
       ),
     );
 
