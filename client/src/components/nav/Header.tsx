@@ -37,7 +37,13 @@ const Header = ({
             <MenuFill className="h-fit appearance-none  md:hidden" />
           )}
         </button>
-        <Link href="/" className="w-full max-w-44  py-2 cursor-default">
+        <Link
+          onClick={() => {
+            setShowMenu(false);
+          }}
+          href="/"
+          className="w-full max-w-44  py-2 cursor-default"
+        >
           {name}
         </Link>
       </div>
