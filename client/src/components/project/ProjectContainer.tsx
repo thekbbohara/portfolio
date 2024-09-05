@@ -3,7 +3,7 @@ import Card from "../ui/Card";
 
 const ProjectContainer = () => {
   return (
-    <section className="grow grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 p-16">
+    <section className="grow grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 p-6 sm:p-16">
       <div className="grid content-center place-content-center">
         <h1 className="flex gap-2 py-3">
           <strong className="text-s3">Project 1</strong>
