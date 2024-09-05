@@ -7,22 +7,27 @@ const SubHeader = ({
   className,
   showIcon = true,
   rotate,
+  onClick,
   ...props
 }: {
   category: string;
   className?: string;
   showIcon?: boolean;
   rotate?: string;
+  onClick?: () => void;
 }) => {
   return (
     <header
       {...props}
+      onClick={onClick}
       className={cn(
         "flex text-s4 border border-transparent border-b-line px-4 py-2",
         className,
       )}
     >
-      {showIcon && <ArrowDownSFill className={cn("text-s4", rotate)} />}
+      {showIcon && (
+        <ArrowDownSFill className={cn("text-s4 transition-[rotate]", rotate)} />
+      )}
       {category}
     </header>
   );
