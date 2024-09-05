@@ -17,7 +17,7 @@ const HeaderText = ({
     <div
       className={cn(
         " cursor-pointer px-8 py-2 border border-b-2 border-transparent border-l-line",
-        active ? "text-s4 border-b-a1" : "text-s1",
+        active ? "text-s4 sm:border-b-a1" : "text-s1",
         activeType === "inline" && "border-line border-b-1",
         className,
       )}
