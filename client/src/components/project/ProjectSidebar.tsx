@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import SubHeader from "../ui/SubHeader";
 import CheckLogo from "../ui/CheckLogo";
 import { NextjsFill, NodejsLine, ReactjsLine } from "@/assets/spfyicons";
@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 const ProjectSidebar = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const showFilters = useState<boolean>(false);
   const filterParam = searchParams.get("filter");
   let filters = [];
   if (filterParam) {
@@ -30,16 +31,17 @@ const ProjectSidebar = () => {
   const techStack: { name: string; icon: React.ReactNode }[] = [
     { name: "react", icon: <ReactjsLine /> },
     { name: "nextjs", icon: <NextjsFill /> },
+    { name: "bun", icon: <NodejsLine /> },
     { name: "nodejs", icon: <NodejsLine /> },
   ];
   return (
     <aside className="flex flex-col grow min-h-full sm:max-w-64 w-full border border-transparent sm:border-r-line ">
       <SubHeader category="Projects" />
-      <ul className="px-4 py-4 flex sm:flex-col gap-2">
+      <ul className="p-4 gap-2 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))]">
         {techStack.map(({ name, icon }, id) => (
           <li
             key={id}
-            className="flex text-wrap justify-center sm:justify-normal items-center  border sm:p-0 p-2 sm:border-transparent border-line"
+            className="flex  items-center  border sm:p-0 p-2 sm:border-transparent border-line"
             onClick={() => {
               handleFilterChange(name);
             }}
