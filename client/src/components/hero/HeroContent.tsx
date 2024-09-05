@@ -7,10 +7,11 @@ const HeroContent = () => {
       <h1 className="relative text-s4 flex flex-col sm:leading-[1]">
         <div className="pointer-events-none max-w-48 w-[60vw] h-48 rounded-lg sm:-top-6 -left-18 sm:left-16 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
         <em className="not-italic">Hi all. I am</em>
-        <strong className=" text-head font-normal leading-[0.8]">
-          Kb Bohara
+        <strong className="text-head font-normal leading-[0.8] flex flex-col sm:flex-row">
+          <span>Kb</span>
+          <span>Bohara</span>
         </strong>
-        <em className="not-italic flex justify-start items-center sm:text-subhead text-s3">
+        <em className="not-italic flex justify-start items-center text-[24px] sm:text-subhead text-s3">
           <span aria-label="the" className="flex justify-self-start">
             &gt;
           </span>
