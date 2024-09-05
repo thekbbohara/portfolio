@@ -17,7 +17,6 @@ const HeroContent = () => {
         </em>
       </h1>
       <div className="relative">
-        <div className=" select-none max-w-60 w-[90vw] h-32 -top-6 rotate-45 right-0 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
         <p className="text-s1 sm:block hidden">
           {"// complete the game to continue".toString()}
         </p>
@@ -27,18 +26,19 @@ const HeroContent = () => {
         <p className="text-s1 block sm:hidden">
           {"// find my profile on Github:".toString()}
         </p>
-        <p className="text-code">
+        <p className="text-code z-10">
           <span className="text-s3">const</span>{" "}
           <span className="text-s2">githubLink</span>{" "}
           <span className="text-s4">=</span>{" "}
           <a
             target="_blank"
             href="https://github.com/thekbbohara"
-            className="text-a1 z-10 sm:text-code"
+            className="text-a1 z-20 sm:text-code"
           >
             "github.com/thekbbohara"
           </a>
         </p>
+        <div className="z-0 pointer-events-none select-none max-w-60 w-[90vw] h-32 -top-6 rotate-45 right-0 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
       </div>
     </section>
   );
