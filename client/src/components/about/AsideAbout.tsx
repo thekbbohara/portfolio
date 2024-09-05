@@ -68,7 +68,7 @@ const AsideAbout = ({ category }: { category: string }) => {
   ];
   return (
     <aside className="h-full w-fit flex flex-shrink-0">
-      <ul className="px-6 w-fit h-full flex flex-col py-4 gap-4 border border-transparent border-r-line">
+      <ul className=" pl-6 pr-2 sm:px-6  w-fit h-full flex flex-col py-4 gap-4 border border-transparent border-r-line">
         {about_category.map(({ query, icon }, id) => (
           <li key={id} className={cn(category !== query && "opacity-40")}>
             <Link href={`?category=${query}`}>{icon}</Link>
