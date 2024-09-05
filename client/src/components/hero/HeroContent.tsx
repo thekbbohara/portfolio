@@ -35,7 +35,7 @@ const HeroContent = () => {
             href="https://github.com/thekbbohara"
             className="text-a1 z-20 sm:text-code"
           >
-            "github.com/thekbbohara"
+            &quot;github.com/thekbbohara&quot;
           </a>
         </p>
         <div className="z-0 pointer-events-none select-none max-w-60 w-[90vw] h-32 -top-6 rotate-45 right-0 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
