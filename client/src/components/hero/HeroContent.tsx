@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroContent = () => {
   return (
-    <section className="flex flex-col  gap-10 sm:gap-20 px-6 sm:px-0 sm:mx-0 mx-auto">
+    <section className="flex flex-col  gap-20 px-6 sm:px-0 sm:mx-0 mx-auto">
       <h1 className="relative text-s4 flex flex-col sm:leading-[1]">
         <div className="pointer-events-none max-w-48 w-[60vw] h-48 rounded-lg sm:-top-6 -left-18 sm:left-16 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
         <em className="not-italic">Hi all. I am</em>
