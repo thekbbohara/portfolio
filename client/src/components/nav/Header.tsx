@@ -24,7 +24,7 @@ const Header = ({
           : "flex border-b-line",
       )}
     >
-      <div className="flex md:pr-20 px-6 gap-2 items-center">
+      <div className="flex md:pr-20 px-4 gap-2 items-center">
         <button
           className="appearance-none"
           onClick={() => {
@@ -34,7 +34,7 @@ const Header = ({
           {showMenu ? (
             <AddFill className="rotate-45 appearance-none  h-fit ease-in-out" />
           ) : (
-            <MenuFill className="h-fit appearance-none  md:hidden" />
+            <MenuFill className="h-fit appearance-none size-5  md:hidden" />
           )}
         </button>
         <Link

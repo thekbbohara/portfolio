@@ -27,7 +27,10 @@ const SubHeader = ({
     >
       {showIcon && (
         <ArrowDownSFill
-          className={cn("text-s4 md:rotate-0 transition-[rotate]", rotate)}
+          className={cn(
+            "w-fit h-fit size-5 text-s4 md:rotate-0 transition-[rotate]",
+            rotate,
+          )}
         />
       )}
       {category}
