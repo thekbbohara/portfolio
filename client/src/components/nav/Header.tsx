@@ -15,8 +15,8 @@ const Header = ({
   const pathName = usePathname();
   return (
     <header className="flex text-s1 w-full border border-transparent border-b-line">
-      <h1 className="flex max-w-64 w-full px-6 py-2">{name}</h1>
-      <nav className="sm:flex w-full hidden">
+      <h1 className="flex max-w-64 w-full px-6 py-2 cursor-default">{name}</h1>
+      <nav className="sm:flex w-full hidden select-none">
         <ul className="md:flex hidden">
           {navItems.map(({ name, route }, id) => (
             <li key={id}>

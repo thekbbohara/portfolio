@@ -4,6 +4,7 @@ import SubHeader from "../ui/SubHeader";
 import CheckLogo from "../ui/CheckLogo";
 import { NextjsFill, NodejsLine, ReactjsLine } from "@/assets/spfyicons";
 import { useRouter, useSearchParams } from "next/navigation";
+import cn from "@/utils/cn";
 const ProjectSidebar = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -38,30 +39,33 @@ const ProjectSidebar = () => {
     <aside className="flex flex-col grow min-h-full sm:max-w-64  w-full border border-transparent sm:border-r-line ">
       <SubHeader
         category="Projects"
-        rotate={showFilters ? "rotate-0" : "rotate-180"}
+        rotate={showFilters ? "rotate-180" : "rotate-0"}
         onClick={() => {
           setShowFilters(!showFilters);
         }}
       />
-      {showFilters && (
-        <ul className="p-4 gap-2 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))]">
-          {techStack.map(({ name, icon }, id) => (
-            <li
-              key={id}
-              className="flex  items-center  border sm:p-0 p-2 sm:border-transparent border-line"
-              onClick={() => {
-                handleFilterChange(name);
-              }}
-            >
-              <CheckLogo
-                icon={icon}
-                name={name}
-                isChecked={filters?.includes(name)}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        className={cn(
+          "p-4 gap-2  grid-cols-[repeat(auto-fit,minmax(150px,1fr))] md:grid",
+          showFilters ? "grid" : "hidden",
+        )}
+      >
+        {techStack.map(({ name, icon }, id) => (
+          <li
+            key={id}
+            className="flex  items-center  border sm:p-0 p-2 sm:border-transparent border-line"
+            onClick={() => {
+              handleFilterChange(name);
+            }}
+          >
+            <CheckLogo
+              icon={icon}
+              name={name}
+              isChecked={filters?.includes(name)}
+            />
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 };

@@ -21,12 +21,14 @@ const SubHeader = ({
       {...props}
       onClick={onClick}
       className={cn(
-        "flex text-s4 border border-transparent border-b-line px-4 py-2",
+        "flex text-s4 border border-transparent border-b-line px-4 py-2 select-none",
         className,
       )}
     >
       {showIcon && (
-        <ArrowDownSFill className={cn("text-s4 transition-[rotate]", rotate)} />
+        <ArrowDownSFill
+          className={cn("text-s4 md:rotate-0 transition-[rotate]", rotate)}
+        />
       )}
       {category}
     </header>
