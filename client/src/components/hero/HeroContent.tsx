@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const HeroContent = () => {
@@ -13,7 +14,9 @@ const HeroContent = () => {
           <span aria-label="the" className="flex justify-self-start">
             &gt;
           </span>
-          <span className="text-nowrap">Full-stack Developer.</span>
+          <Link href="/about" className="text-nowrap">
+            Full-stack Developer.
+          </Link>
         </em>
       </h1>
       <div className="relative">
