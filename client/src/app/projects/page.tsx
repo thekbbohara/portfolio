@@ -4,12 +4,12 @@ import React, { Suspense } from "react";
 
 const Projects = () => {
   return (
-    <section className="grow h-full flex">
-      <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <section className="grow h-full sm:flex">
         <ProjectSidebar />
         <ProjectContainer />
-      </Suspense>
-    </section>
+      </section>
+    </Suspense>
   );
 };
 

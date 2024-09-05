@@ -33,13 +33,13 @@ const ProjectSidebar = () => {
     { name: "nodejs", icon: <NodejsLine /> },
   ];
   return (
-    <aside className="flex flex-col grow min-h-full max-w-64 w-full border border-transparent border-r-line ">
+    <aside className="flex flex-col grow min-h-full sm:max-w-64 w-full border border-transparent sm:border-r-line ">
       <SubHeader category="Projects" />
-      <ul className="px-4 py-4 flex flex-col gap-2">
+      <ul className="px-4 py-4 flex sm:flex-col gap-2">
         {techStack.map(({ name, icon }, id) => (
           <li
             key={id}
-            className="flex"
+            className="flex text-wrap justify-center sm:justify-normal items-center  border sm:p-0 p-2 sm:border-transparent border-line"
             onClick={() => {
               handleFilterChange(name);
             }}
