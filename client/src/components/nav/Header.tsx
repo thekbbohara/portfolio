@@ -32,7 +32,7 @@ const Header = ({
           }}
         >
           {showMenu ? (
-            <AddFill className="rotate-45 appearance-none transition-transform h-fit ease-in-out" />
+            <AddFill className="rotate-45 appearance-none  h-fit ease-in-out" />
           ) : (
             <MenuFill className="h-fit appearance-none  md:hidden" />
           )}
