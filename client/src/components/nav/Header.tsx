@@ -16,8 +16,8 @@ const Header = ({
   return (
     <header className="flex text-s1 w-full border border-transparent border-b-line">
       <h1 className="flex max-w-64 w-full px-6 py-2">{name}</h1>
-      <nav className="flex w-full">
-        <ul className="flex">
+      <nav className="sm:flex w-full hidden">
+        <ul className="md:flex hidden">
           {navItems.map(({ name, route }, id) => (
             <li key={id}>
               <Link href={route}>

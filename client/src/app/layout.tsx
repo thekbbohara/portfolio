@@ -23,8 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fira.className}>
-        <main className="bg-p2 text-s1 min-h-svh w-full flex flex-col justify-between">
+      <body className={`${fira.className}`}>
+        <main className="bg-p2 text-s1 text-ellipsis overflow-hidden min-h-svh w-full flex flex-col justify-between">
           <Header
             name="kb-bohara"
             navItems={[
