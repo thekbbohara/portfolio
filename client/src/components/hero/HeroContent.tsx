@@ -4,7 +4,7 @@ const HeroContent = () => {
   return (
     <section className="flex flex-col  gap-10 sm:gap-20 px-6 sm:px-0 sm:mx-0 mx-auto">
       <h1 className="relative text-s4 flex flex-col sm:leading-[1]">
-        <div className="pointer-events-none max-w-72 w-[90vw] h-48 rounded-lg sm:-top-6 left-0 sm:left-16 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
+        <div className="pointer-events-none max-w-48 w-[60vw] h-48 rounded-lg sm:-top-6 -left-18 sm:left-16 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
         <em className="not-italic">Hi all. I am</em>
         <strong className=" text-head font-normal leading-[0.8]">
           Kb Bohara
@@ -38,7 +38,7 @@ const HeroContent = () => {
             &quot;github.com/thekbbohara&quot;
           </a>
         </p>
-        <div className="z-0 pointer-events-none select-none max-w-80 w-[90vw] h-32 -top-6 rotate-45 right-0 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
+        <div className="z-0 pointer-events-none select-none max-w-80 w-[90vw] h-32 -top-6 -right-10 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
       </div>
     </section>
   );
