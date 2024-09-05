@@ -4,6 +4,7 @@ import React from "react";
 import HeaderText from "../ui/HeaderText";
 import { usePathname } from "next/navigation";
 import cn from "@/utils/cn";
+import { MenuFill } from "@/assets/spfyicons";
 
 const Header = ({
   name,
@@ -14,10 +15,13 @@ const Header = ({
 }) => {
   const pathName = usePathname();
   return (
-    <header className="flex text-s1 w-full border border-transparent border-b-line">
-      <h1 className="flex max-w-64 w-full px-6 py-2 cursor-default">{name}</h1>
-      <nav className="sm:flex w-full hidden select-none">
-        <ul className="md:flex hidden">
+    <header className="flex  text-s1 w-full border border-transparent border-b-line">
+      <div className="flex md:pr-20 px-6 gap-2 items-center">
+        <MenuFill className="h-fit md:hidden" />
+        <h1 className="w-full max-w-44  py-2 cursor-default">{name}</h1>
+      </div>
+      <nav className="grow flex sm:justify-between  select-none">
+        <ul className="sm:flex hidden">
           {navItems.map(({ name, route }, id) => (
             <li key={id}>
               <Link href={route}>

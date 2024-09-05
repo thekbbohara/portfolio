@@ -29,7 +29,7 @@ const HeroContent = () => {
           <span className="text-s3">const</span>{" "}
           <span className="text-s2">githubLink</span>{" "}
           <span className="text-s4">=</span>{" "}
-          <span className="text-a1 text-[calc(90vw/18)] sm:text-code">
+          <span className="text-a1  sm:text-code">
             “github.com/thekbbohara”
           </span>
         </p>
