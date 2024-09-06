@@ -9,20 +9,23 @@ const HeroContent = () => {
         <strong className="not-italic flex sm:flex-row flex-col opacity-75">
           안녕
         </strong>
-        <strong className="text-head font-normal leading-[0.8] sm:gap-2 flex flex-col sm:flex-row">
+        <Link
+          href="/about"
+          className="text-head font-normal leading-[0.8] sm:gap-2 flex flex-col sm:flex-row"
+        >
           <span>Kb</span>
           <span>Bohara</span>
-        </strong>
+        </Link>
         <em className="not-italic flex justify-start items-center text-[24px] sm:text-subhead text-s3">
           <span aria-label="the" className="flex justify-self-start">
             &gt;
           </span>
-          <Link href="/about" className="text-nowrap">
+          <Link href="/projects" className="text-nowrap">
             Full-stack Developer.
           </Link>
         </em>
       </h1>
-      <div className="relative">
+      <div className="relative cursor-default">
         <p className="text-s1 sm:block hidden">
           {"// complete the game to continue".toString()}
         </p>
