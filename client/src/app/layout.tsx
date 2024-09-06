@@ -9,7 +9,7 @@ const fira = Fira_Code({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "thekbbohara",
-  description: "fullstack developer portfolio website.",
+  description: "thekbbohara: fullstack developer portfolio website.",
   keywords:
     "fullstack developer, portfolio, web development, programming , thekbbohara, kbbohara, nextjs developer, golang developer, web developer",
   category: "tsx",

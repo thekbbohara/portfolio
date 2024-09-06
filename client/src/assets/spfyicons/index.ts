@@ -287,3 +287,76 @@ export const Bun = createIcon({
     },
   ],
 });
+export const ExternalLinkFill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v9l-3.794-3.793l-5.999 6l-1.414-1.414l5.999-6L12 3z",
+    },
+  ],
+});
+export const VideoOnFill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "m17 9.2l5.213-3.65a.5.5 0 0 1 .787.41v12.08a.5.5 0 0 1-.787.41L17 14.8V19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1z",
+    },
+  ],
+});
+export const Information2Fill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-12.5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m2 5.5h-1v-4.5h-3v2h1V15h-1v2h4z",
+    },
+  ],
+});
+export const AddCircleFill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m-1-11H7v2h4v4h2v-4h4v-2h-4V7h-2z",
+    },
+  ],
+});
+export const CameraFill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zm3 16a6 6 0 1 0 0-12a6 6 0 0 0 0 12m0-2a4 4 0 1 1 0-8a4 4 0 0 1 0 8",
+    },
+  ],
+});
+export const Image2Fill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "m5 11.1l2-2l5.5 5.5l3.5-3.5l3 3V5H5zM4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m11.5 7a1.5 1.5 0 1 1 0-3a1.5 1.5 0 0 1 0 3",
+    },
+  ],
+});
+export const MicFill = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M12 1a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V6a5 5 0 0 1 5-5M3.055 11H5.07a7.002 7.002 0 0 0 13.858 0h2.016A9.004 9.004 0 0 1 13 18.945V23h-2v-4.055A9.004 9.004 0 0 1 3.055 11",
+    },
+  ],
+});
+export const ThumbUpFilled = createIcon({
+  viewBox: "0 0 24 24",
+  path: [
+    {
+      fill: "currentColor",
+      d: "M13 3a3 3 0 0 1 2.995 2.824L16 6v4h2a3 3 0 0 1 2.98 2.65l.015.174L21 13l-.02.196l-1.006 5.032c-.381 1.626-1.502 2.796-2.81 2.78L17 21H9a1 1 0 0 1-.993-.883L8 20l.001-9.536a1 1 0 0 1 .5-.865a3 3 0 0 0 1.492-2.397L10 7V6a3 3 0 0 1 3-3m-8 7a1 1 0 0 1 .993.883L6 11v9a1 1 0 0 1-.883.993L5 21H4a2 2 0 0 1-1.995-1.85L2 19v-7a2 2 0 0 1 1.85-1.995L4 10z",
+    },
+  ],
+});
+export const Emoji16Filled=createIcon({"viewBox":"0 0 16 16","path":[{"fill":"currentColor","d":"M8 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12M6.25 7.75a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5m-.114 1.917a.5.5 0 1 0-.745.667A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 2.609-1.166a.5.5 0 1 0-.745-.667A2.5 2.5 0 0 1 8 10.5c-.74 0-1.405-.321-1.864-.833M9.75 7.75a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5"}]});
