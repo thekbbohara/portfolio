@@ -1,22 +1,22 @@
 import React from "react";
-const codeString = `
+/* const codeString = `
 const button = document.querySelector('#sendBtn');
 
 const message = {
-	name: "Jonathan Davis",
-	email: "",
-	message: "",
-	date: "Thu 21 Apr"
+  name: "Jonathan Davis",
+  email: "",
+  message: "",
+  date: "Thu 21 Apr"
 }
 
 button.addEventListener('click', () => {
-	form.send(message);
+  form.send(message);
 })
 `;
-
+ */
 const ContactCodeview = () => {
   return (
-    <code className="p-4 mt-12">
+    <code className="p-4 mt-12 hidden md:block">
       <span className="mr-4">1</span>
       <span className="text-a4">const</span>{" "}
       <span className="text-s3">button</span>{" "}

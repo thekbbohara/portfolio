@@ -15,7 +15,7 @@ import Button from "../ui/Buttons";
 
 const Messenger = () => {
   return (
-    <section className="w-full mx-auto sm:mx-0 max-w-md border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
+    <section className="w-[98vw] mx-auto sm:mx-0 max-w-md border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
       <header className="flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <Image
@@ -64,9 +64,11 @@ const Messenger = () => {
       <footer className="flex justify-between items-center">
         <div className="flex gap-1">
           <AddCircleFill />
-          <CameraFill />
-          <Image2Fill />
-          <MicFill />
+          <div className="hidden sm:flex">
+            <CameraFill />
+            <Image2Fill />
+            <MicFill />
+          </div>
         </div>
         <div className="flex border border-line bg-transparent rounded-xl p-1">
           <input
