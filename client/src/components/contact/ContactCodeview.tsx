@@ -21,7 +21,10 @@ const ContactCodeview = () => {
       <span className="text-a4">const</span>{" "}
       <span className="text-s3">button</span>{" "}
       <span className="text-a4"> = </span>
-      <span className="text-s3">document.querySelector('#sendBtn')</span>;<br />
+      <span className="text-s3">
+        document.querySelector(<span className="text-a1">"#sendBtn"</span>)
+      </span>
+      ;<br />
       <span className="mr-4">2</span>
       <br />
       <span className="mr-4">3</span>
@@ -53,7 +56,7 @@ const ContactCodeview = () => {
       <span className="text-s3">button</span>.
       <span className="text-s3">addEventListener</span>(<br />
       <span className="mr-4">10</span>
-      <span className="text-a1 pl-12">'click'</span>, ()
+      <span className="text-a1 pl-12">"click"</span>, ()
       <span className="text-a4"> ={">"} </span>
       {"{"}
       <span className="text-s3">io</span>.<span className="text-s3">emit</span>(
