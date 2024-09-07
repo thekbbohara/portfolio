@@ -61,7 +61,7 @@ const Messenger = () => {
         </div>
         <div id="message-box"></div>
       </div>
-      <footer className="flex justify-between items-center">
+      <footer className="flex justify-between gap-1 items-center">
         <div className="flex gap-1">
           <AddCircleFill className=" sm:hidden flex" />
           <div className=" hidden xsm:flex">
@@ -72,7 +72,7 @@ const Messenger = () => {
         </div>
         <div className=" flex w-full justify-between items-center border border-line bg-transparent rounded-xl p-1 ">
           <input
-            className="bg-transparent outline outline-transparent grow py-1 pl-1"
+            className="bg-transparent min-w-[10ch] w-full outline outline-transparent grow py-1 pl-1"
             placeholder="message"
           />
           <Emoji16Filled />
