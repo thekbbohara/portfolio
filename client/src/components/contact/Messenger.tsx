@@ -15,9 +15,9 @@ import Button from "../ui/Buttons";
 
 const Messenger = () => {
   return (
-    <section className="w-[98vw] mx-auto sm:mx-0 max-w-md border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
+    <section className="w-full max-w-[98vw] mx-auto sm:mx-0  border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
       <header className="flex items-center justify-between">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center justify-between">
           <Image
             src="/kb.jpg"
             alt="kb"
@@ -63,22 +63,18 @@ const Messenger = () => {
       </div>
       <footer className="flex justify-between items-center">
         <div className="flex gap-1">
-          <AddCircleFill />
-          <div className="hidden sm:flex">
+          <AddCircleFill className=" sm:hidden flex" />
+          <div className=" hidden xsm:flex">
             <CameraFill />
             <Image2Fill />
             <MicFill />
           </div>
         </div>
-        <div className="flex border border-line bg-transparent rounded-xl p-1">
-          <input
-            type="text"
-            placeholder="Message"
-            className="bg-transparent outline-none"
-          />
+        <div className=" flex w-full justify-between border border-line bg-transparent rounded-xl p-1 ">
+          <input className="bg-transparent " placeholder="message" />
           <Emoji16Filled />
         </div>
-        <button>
+        <button className="">
           <ThumbUpFilled />
         </button>
       </footer>

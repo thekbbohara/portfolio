@@ -18,13 +18,13 @@ const ContactSidebar = () => {
     },
   ];
   return (
-    <aside className="grow hidden sm:flex flex-col gap-4 max-w-fit  min-h-full border border-transparent border-r-line">
+    <aside className="grow hidden sm:flex flex-col gap-4   min-h-full border border-transparent border-r-line">
       <div className="flex flex-col gap-2">
         <SubHeader category="contacts" />
         <ul className="px-2 flex flex-col gap-2">
           <li className="flex gap-2">
             <MailFill />
-            <span>khagendrabhr@gmail.com</span>
+            <span>kbboharabiz@gmail.com</span>
           </li>
           <li className="flex gap-2">
             <PhoneFill />

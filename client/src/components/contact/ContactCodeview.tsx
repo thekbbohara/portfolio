@@ -16,7 +16,7 @@ button.addEventListener('click', () => {
  */
 const ContactCodeview = () => {
   return (
-    <code className="p-4 mt-12 hidden md:block">
+    <code className="grow  w-full p-4 mt-12 hidden lg:block">
       <span className="mr-4">1</span>
       <span className="text-a4">const</span>{" "}
       <span className="text-s3">button</span>{" "}
@@ -36,7 +36,7 @@ const ContactCodeview = () => {
       <br />
       <span className="mr-4">4</span>
       <span className="text-s3 pl-12">name</span>:{" "}
-      <span className="text-a1">&quot;Jonathan Davis&quot;</span>,
+      <span className="text-a1">&quot;&quot;</span>,
       <br />
       <span className="mr-4">5</span>
       <span className="text-s3 pl-12">email</span>:{" "}

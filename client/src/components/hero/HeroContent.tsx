@@ -16,7 +16,7 @@ const HeroContent = () => {
           <span>Kb</span>
           <span>Bohara</span>
         </Link>
-        <em className="not-italic flex justify-start items-center text-[24px] sm:text-subhead text-s3">
+        <em className="not-italic flex justify-start items-center text-[20px] xsm:text-[24px] sm:text-subhead text-s3">
           <span aria-label="the" className="flex justify-self-start">
             &gt;
           </span>
