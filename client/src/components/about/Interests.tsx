@@ -11,7 +11,8 @@ const Interests = () => {
     "* anime : one peice.",
     "* sensei (先生): Eiichiro Oda",
     "* music: daylight by david kushner",
-    "* i write some screenplay & songs",
+    "* sometime i write screenplay & songs",
+    "* love Keanu Reeves",
     "* a bit into unixporn",
   ];
   info.push("*/");
