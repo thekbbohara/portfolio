@@ -12,6 +12,7 @@ import {
 } from "@/assets/spfyicons";
 import { useRouter, useSearchParams } from "next/navigation";
 import cn from "@/utils/cn";
+
 const ProjectSidebar = () => {
   const searchParams = useSearchParams();
   const router = useRouter();

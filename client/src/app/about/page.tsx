@@ -8,7 +8,13 @@ import Interests from "@/components/about/Interests";
 
 const AboutContent = () => {
   const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "personal";
+  const categoryFromParams = searchParams.get("category");
+  const category: "personal" | "professional" | "hobbies" =
+    categoryFromParams === "personal" ||
+      categoryFromParams === "professional" ||
+      categoryFromParams === "hobbies"
+      ? categoryFromParams
+      : "personal";
 
   return (
     <section className="grow h-full flex relative">

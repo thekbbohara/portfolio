@@ -1,74 +1,31 @@
 import React from "react";
 import Card from "../ui/Card";
 
-const ProjectContainer = () => {
+const ProjectContainer = ({
+  projects,
+}: {
+  projects: {
+    projectName: string;
+    title: string;
+    img: string;
+    href: string;
+    alt: string;
+    tags: string;
+  }[];
+}) => {
   return (
-    <section className="grow grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 p-6 sm:p-16">
-      <div className="grid content-center place-content-center">
-        <h1 className="flex gap-2 py-3">
-          <strong className="text-s3">Project 1</strong>
-          <span>{`//_ui animations`}</span>
-        </h1>
-        <Card
-          img="https://images.unsplash.com/photo-1627843240043-aa499ed215e7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          href={"https:youtube.com"}
-          alt="alt"
-        >
-          Duis aute irure dolor in velit esse cillum dolore.
-        </Card>
-      </div>
-      <div className="grid content-center place-content-center">
-        <h1 className="flex gap-2 py-3">
-          <strong className="text-s3">Project 1</strong>
-          <span>{`//_ui animations`}</span>
-        </h1>
-        <Card
-          img="https://images.unsplash.com/photo-1725200239452-1db4c697fd8d?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          href={"https:youtube.com"}
-          alt="alt"
-        >
-          Duis aute irure dolor in velit esse cillum dolore.
-        </Card>
-      </div>
-      <div className="grid content-center place-content-center">
-        <h1 className="flex gap-2 py-3">
-          <strong className="text-s3">Project 1</strong>
-          <span>{`//_ui animations`}</span>
-        </h1>
-        <Card
-          img="https://images.unsplash.com/photo-1725200239452-1db4c697fd8d?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          href={"https:youtube.com"}
-          alt="alt"
-        >
-          Duis aute irure dolor in velit esse cillum dolore.
-        </Card>
-      </div>
-      <div className="grid content-center place-content-center">
-        <h1 className="flex gap-2 py-3">
-          <strong className="text-s3">Project 1</strong>
-          <span>{`//_ui animations`}</span>
-        </h1>
-        <Card
-          img="https://images.unsplash.com/photo-1725200239452-1db4c697fd8d?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          href={"https:youtube.com"}
-          alt="alt"
-        >
-          Duis aute irure dolor in velit esse cillum dolore.
-        </Card>
-      </div>
-      <div className="grid content-center place-content-center">
-        <h1 className="flex gap-2 py-3">
-          <strong className="text-s3">Project 1</strong>
-          <span>{`//_ui animations`}</span>
-        </h1>
-        <Card
-          img="https://images.unsplash.com/photo-1725200239452-1db4c697fd8d?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          href={"https:youtube.com"}
-          alt="alt"
-        >
-          Duis aute irure dolor in velit esse cillum dolore.
-        </Card>
-      </div>
+    <section className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 p-4 sm:p-8">
+      {projects.map(({ projectName, title, img, href, alt }, id) => (
+        <div className="flex flex-col h-[314px] mx-auto">
+          <h1 className="flex gap-2 py-3">
+            <strong className="text-s3">Project {id + 1}</strong>
+            <span>{`//_${projectName}`}</span>
+          </h1>
+          <Card img={img} href={href} alt={alt} className="flex-1">
+            {title}
+          </Card>
+        </div>
+      ))}
     </section>
   );
 };
