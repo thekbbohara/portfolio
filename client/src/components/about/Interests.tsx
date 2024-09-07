@@ -2,23 +2,17 @@ import cn from "@/utils/cn";
 import React from "react";
 import SubHeader from "../ui/SubHeader";
 
-const ProfessionalInfo = () => {
-  const date = new Date();
+const Interests = () => {
   const info: string[] = [
     "/**",
-    "* About me",
-    "* You can call me kb",
-    `* I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web`,
-    "* Loves making  useful stuff",
-    "* I code in neovim btw.",
-    "* loves typescript",
-    "* Runtime: bun && node",
-    "* Frameworks: Nextjs, express.js, Hono,",
-    "* Libraries: React, Zustand, Redux, Zod, React Query,socket.io",
-    "* Databases & Caching: MongoDB, Redis",
-    "* Styling: tailwind css,",
-    "* for ui stuff: spfyui, shadcn",
-    "* Tools: Git, docker, kitty, spfyui",
+    "* some secret stuff",
+    "* i read books when i get bored.",
+    "* currently reading: 48 law of power.",
+    "* anime : one peice.",
+    "* sensei (先生): Eiichiro Oda",
+    "* music: daylight by david kushner",
+    "* i write some screenplay & songs",
+    "* a bit into unixporn",
   ];
   info.push("*/");
   return (
@@ -41,4 +35,4 @@ const ProfessionalInfo = () => {
     </div>
   );
 };
-export default ProfessionalInfo;
+export default Interests;

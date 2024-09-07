@@ -3,6 +3,8 @@ import React, { Suspense } from "react";
 import AsideAbout from "@/components/about/AsideAbout";
 import Bio from "@/components/about/Bio";
 import { useSearchParams } from "next/navigation";
+import ProInfo from "@/components/about/ProInfo";
+import Interests from "@/components/about/Interests";
 
 const AboutContent = () => {
   const searchParams = useSearchParams();
@@ -13,7 +15,9 @@ const AboutContent = () => {
       <div className="grow flex">
         <AsideAbout category={category} />
         <div className="flex justify-between grow">
-          <Bio category={category} />
+          {category === "personal" && <Bio />}
+          {category === "professional" && <ProInfo />}
+          {category === "hobbies" && <Interests />}
           <div className="h-full w-4 border border-y-transparen border-line">
             <div className="w-full h-2 bg-s1 mt-2"></div>
           </div>
