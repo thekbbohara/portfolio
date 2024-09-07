@@ -70,8 +70,11 @@ const Messenger = () => {
             <MicFill />
           </div>
         </div>
-        <div className=" flex w-full justify-between border border-line bg-transparent rounded-xl p-1 ">
-          <input className="bg-transparent " placeholder="message" />
+        <div className=" flex w-full justify-between items-center border border-line bg-transparent rounded-xl p-1 ">
+          <input
+            className="bg-transparent outline-transparent py-1 pl-1"
+            placeholder="message"
+          />
           <Emoji16Filled />
         </div>
         <button className="">
