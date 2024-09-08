@@ -7,7 +7,7 @@ const ProInfo = () => {
   const info: string[] = [
     "/**",
     "* official stuff",
-    "* i hate this guy -> khagendra bahadur bohara",
+    "* just fyi it's khagendra bahadur bohara",
     `* I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web`,
     "* I use arch btw.",
     "* oh and I code in neovim.",
