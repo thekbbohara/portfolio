@@ -9,24 +9,24 @@
 - [ ] 1.Create components:
   ### UI
   - [x] Buttons.tsx
-  - [ ] Card.tsx
-  - [ ] Check.tsx
+  - [x] Card.tsx
+  - [x] Check.tsx
   - [ ] Star.tsx
   - [ ] IconBox.tsx
   - [ ] TechnologiesLogos.tsx
   - [ ] TechnologiesRow.tsx
-  - [ ] HeaderText.tsx
+  - [x] HeaderText.tsx
   - [ ] SocialMedia.tsx
   - [ ] Comments.tsx
   - [ ] CodeSnippet.tsx
   ### Navbar
   - [x] Header.tsx
   - [x] Footer.tsx
-  - [ ] MobileMenu.tsx
+  - [x] MobileMenu.tsx
   ### Sidebars
-  - [ ] AboutMeSidebar.tsx
-  - [ ] ProjectFilterSidebar.tsx
-  - [ ] ContactMeSidebar.tsx
+  - [x] AboutMeSidebar.tsx
+  - [x] ProjectFilterSidebar.tsx
+  - [x] ContactMeSidebar.tsx
   ### SnakeGame
   - [ ] GameBoard.tsx
   - [ ] GameCanvas.tsx
