@@ -7,7 +7,7 @@ const projectData: {
   img: string;
   href: string;
   alt: string;
-  tags: string;
+  tags: string[];
 }[] = [
     {
       projectName: "spfyui",
@@ -15,14 +15,14 @@ const projectData: {
       img: "/assets/spfyui.png",
       href: "https://www.npmjs.com/package/spfyui",
       alt: "spfyui",
-      tags: "nodejs",
+      tags: ["nodejs"],
     }, {
       projectName: "ai-calculator",
       title: "Draw to calculate.",
       img: "/assets/spfyui.png",
       href: "https://ai-calculator-rose.vercel.app/",
       alt: "ai-calculator[rose]",
-      tags: "nextjs",
+      tags: ["nextjs", "typescript"],
     }
   ];
 const Projects = () => {

@@ -4,6 +4,7 @@ import SubHeader from "../ui/SubHeader";
 import CheckLogo from "../ui/CheckLogo";
 import {
   Bun,
+  Docker,
   Express,
   Hono,
   NextjsFill,
@@ -38,12 +39,13 @@ const ProjectSidebar = () => {
     router.push(`?${queryString}`);
   };
   const techStack: { name: string; icon: React.ReactNode }[] = [
-    { name: "react", icon: <ReactjsLine /> },
-    { name: "nextjs", icon: <NextjsFill /> },
     { name: "bun", icon: <Bun /> },
-    { name: "nodejs", icon: <NodejsLine /> },
-    { name: "hono", icon: <Hono /> },
+    { name: "docker", icon: <Docker /> },
     { name: "express", icon: <Express className="fill-s1" /> },
+    { name: "hono", icon: <Hono /> },
+    { name: "nextjs", icon: <NextjsFill /> },
+    { name: "nodejs", icon: <NodejsLine /> },
+    { name: "react", icon: <ReactjsLine /> },
   ];
   return (
     <aside className="flex flex-col grow min-h-full sm:max-w-64  w-full border border-transparent sm:border-r-line ">
