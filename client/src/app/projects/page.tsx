@@ -16,23 +16,14 @@ const projectData: {
       href: "https://www.npmjs.com/package/spfyui",
       alt: "spfyui",
       tags: "nodejs",
-    },
-    {
-      projectName: "colearnify",
-      title: "Duis aute irure dolor in velit esse cillum dolore.",
-      img: "/assets/colearnify.png",
-      href: "https://github.com/thekbbohara/CoLearnify",
-      alt: "colearnify",
+    }, {
+      projectName: "ai-calculator",
+      title: "Draw to calculate.",
+      img: "/assets/spfyui.png",
+      href: "https://ai-calculator-rose.vercel.app/",
+      alt: "ai-calculator[rose]",
       tags: "nextjs",
-    },
-    {
-      projectName: "assign sync",
-      title: "Duis aute irure dolor in velit esse cillum dolore.",
-      img: "https://images.unsplash.com/photo-1569917761875-e2897cee7d80",
-      href: "https://youtube.com/",
-      alt: "assign-sync",
-      tags: "nextjs",
-    },
+    }
   ];
 const Projects = () => {
   return (
