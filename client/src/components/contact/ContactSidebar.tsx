@@ -6,7 +6,7 @@ const ContactSidebar = () => {
   const extrenalLinks: { name: string; href: string }[] = [
     {
       name: "discord",
-      href: "https://discord.com/channels/@me/1248827165924135044",
+      href: "https://discord.gg/DPxfxrYJuy",
     },
     {
       name: "median",
@@ -24,7 +24,7 @@ const ContactSidebar = () => {
         <ul className="px-2 flex flex-col gap-2">
           <li className="flex gap-2">
             <MailFill />
-            <span>kbboharabiz@gmail.com</span>
+            <span>thekbbohara@gmail.com</span>
           </li>
           <li className="flex gap-2">
             <PhoneFill />
@@ -38,7 +38,7 @@ const ContactSidebar = () => {
           {extrenalLinks.map(({ name, href }) => (
             <li key={name} className="flex">
               <ExternalLinkFill />
-              <a href={href}>{name}</a>
+              <a href={href} target="_blank">{name}</a>
             </li>
           ))}
         </ul>
