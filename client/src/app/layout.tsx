@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/nav/Footer";
-import { FacebookFill, TwitterXFill } from "@/assets/spfyicons";
+import { TwitterXFill, Linkedin, LinkedinSolid } from "@/assets/spfyicons";
 import Header from "@/components/nav/Header";
 
 const fira = Fira_Code({ subsets: ["latin"] });
@@ -40,13 +40,14 @@ export default function RootLayout({
           <Footer
             socialLink={[
               {
-                icon: <FacebookFill className="size-5" />,
-                href: "https://facebook.com/thekbbohara",
-              },
-              {
                 icon: <TwitterXFill className="size-5" />,
                 href: "https://x.com/thekbbohara",
               },
+              {
+                icon: <LinkedinSolid className="size-5" />,
+                href: "https://linkedin.com/in/thekbbohara",
+              },
+
             ]}
           />
         </main>

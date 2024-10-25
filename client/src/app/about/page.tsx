@@ -14,7 +14,7 @@ const AboutContent = () => {
       categoryFromParams === "professional" ||
       categoryFromParams === "hobbies"
       ? categoryFromParams
-      : "personal";
+      : "professional";
 
   return (
     <section className="grow h-full flex relative">

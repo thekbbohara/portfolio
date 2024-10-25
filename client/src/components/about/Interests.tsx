@@ -6,11 +6,11 @@ const Interests = () => {
   const info: string[] = [
     "/**",
     "* some secret stuff",
-    "* i read books when i get bored.",
+    "* i read books when i get bored.(it's a lie)",
     "* currently reading: 48 law of power.",
     "* anime : one peice.",
     "* sensei (先生): Eiichiro Oda",
-    "* music: daylight by david kushner",
+    "* music: scared by me",
     "* sometime i write screenplay & songs",
     "* love Keanu Reeves",
     "* a bit into unixporn",
@@ -19,7 +19,7 @@ const Interests = () => {
   return (
     <div className="w-full">
       <SubHeader
-        category={`personal-info`}
+        category={`thekbbohara`}
         className="text-s1"
         showIcon={false}
       />

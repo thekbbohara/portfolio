@@ -6,20 +6,28 @@ const ProInfo = () => {
   const date = new Date();
   const info: string[] = [
     "/**",
-    "* official stuff",
-    "* just fyi it's khagendra bahadur bohara",
-    `* I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web`,
-    "* I use arch btw.",
-    "* oh and I code in neovim.",
-    "* school: nothing related to coding",
-    "* bootcamp: broadway infosys",
-    "* didn't went to harvard'",
+    "* const info: string[] = [",
+    "* \"You can call me kb\",",
+    `* \"I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web\",`,
+    "* \"I use arch btw.\",",
+    "* \"oh and I code in neovim\".",
+    "* \"Runtime: bun && node\",",
+    "* \"Frameworks: Nextjs, express.js, Hono\",",
+    "* \"Libraries: React, [Zustand, Redux], Zod, React Query,socket.io\",",
+    "* \"Databases & Caching: MongoDB, Redis\",",
+    "* \"Styling: tailwind css\",",
+    "* \"for ui stuff: spfyui, shadcn\",",
+    "* \"Tools: Git, docker, kitty, spfyui\",",
+    "* \"school: nothing related to coding\",",
+    "* \"bootcamp: broadway infosys\",",
+    "* \"didn't went to harvard\",",
   ];
+  info.push("* ]");
   info.push("*/");
   return (
     <div className="w-full">
       <SubHeader
-        category={`personal-info`}
+        category={`developer`}
         className="text-s1"
         showIcon={false}
       />

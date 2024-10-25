@@ -2,29 +2,23 @@ import cn from "@/utils/cn";
 import React from "react";
 import SubHeader from "../ui/SubHeader";
 
-const ProfessionalInfo = () => {
-  const date = new Date();
+const PersonalInfo = () => {
   const info: string[] = [
     "/**",
     "* About me",
+    "* On a journey of discomfort of my own choosing",
     "* You can call me kb",
-    `* I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web`,
-    "* Loves making  useful stuff",
-    "* I code in neovim btw.",
-    "* loves typescript",
-    "* Runtime: bun && node",
-    "* Frameworks: Nextjs, express.js, Hono,",
-    "* Libraries: React, Zustand, Redux, Zod, React Query,socket.io",
-    "* Databases & Caching: MongoDB, Redis",
-    "* Styling: tailwind css,",
-    "* for ui stuff: spfyui, shadcn",
-    "* Tools: Git, docker, kitty, spfyui",
+    "* imma minimalist",
+    "* Love to call myself ambivert",
+    "* No caffeine, drinks, or coke for me",
+    "* Loves making useful stuff",
+    "* Philosophy: Never complain, and be accountable for what you do, and remember that balance is key to life."
   ];
   info.push("*/");
   return (
     <div className="w-full">
       <SubHeader
-        category={`personal-info`}
+        category={`kb bohara`}
         className="text-s1"
         showIcon={false}
       />
@@ -41,4 +35,4 @@ const ProfessionalInfo = () => {
     </div>
   );
 };
-export default ProfessionalInfo;
+export default PersonalInfo;
