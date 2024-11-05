@@ -8,7 +8,7 @@ const ProInfo = () => {
     "/**",
     "* const info: string[] = [",
     "* \"You can call me kb\",",
-    `* \"I have ${date.getFullYear() - 2024}.${date.getMonth()} years of experience in web\",`,
+    `* \"I have ${date.getFullYear() - 2024}.${date.getMonth() + 1} years of experience in web\",`,
     "* \"I use arch btw.\",",
     "* \"oh and I code in neovim\".",
     "* \"Runtime: bun && node\",",
