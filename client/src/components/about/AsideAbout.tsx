@@ -62,7 +62,7 @@ const AsideAbout = ({ category }: { category: string }) => {
       subInfo: [
         { subName: "school", subIcon: <MarkdownFill className="size-5" /> },
         { subName: "bootcamp", subIcon: <MarkdownFill className="size-5" /> },
-        { subName: "collage", subIcon: <MarkdownFill className="size-5" /> },
+        { subName: "college", subIcon: <MarkdownFill className="size-5" /> },
       ],
     },
   ];
