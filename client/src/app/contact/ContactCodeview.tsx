@@ -14,7 +14,7 @@ button.addEventListener('click', () => {
 })
 `;
  */
-const ContactCodeview = () => {
+const ContactCodeview = ({ msg }: { msg?: string }) => {
   return (
     <code className="grow  w-full p-4 mt-12 hidden lg:block">
       <span className="mr-4">1</span>
@@ -43,12 +43,22 @@ const ContactCodeview = () => {
       <span className="text-a1">&quot;&quot;</span>,
       <br />
       <span className="mr-4">6</span>
-      <span className="text-s3 pl-12">message</span>:{" "}
-      <span className="text-a1">&quot;&quot;</span>,
+      <span className="text-s3 pl-12">message</span>:
+      <span className="text-a1">&quot;</span>
+      {
+        `${msg}` || ""}
+
+      <span className="text-a1">&quot;</span>,
       <br />
       <span className="mr-4">7</span>
       <span className="text-s3 pl-12">date</span>:{" "}
-      <span className="text-a1">&quot;Thu 21 Apr&quot;</span>,
+      <span className="text-a1">&quot;</span>
+      {new Date().toLocaleString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      })}
+      <span className="text-a1">&quot;</span>,
       <br />
       <span className="mr-4">8</span>
       {"}"}

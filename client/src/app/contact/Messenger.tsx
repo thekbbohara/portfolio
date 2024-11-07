@@ -12,11 +12,26 @@ import {
   VideoOnFill,
 } from "@/assets/spfyicons";
 import Button from "@/components/ui/Buttons";
+import cn from "@/utils/cn";
+import { format, formatDistanceToNow } from "date-fns";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
-const Messenger = () => {
-  const [msg, setMsg] = useState<string>("");
+const Messenger = ({ msg, setMsg }: { msg: string; setMsg: Dispatch<SetStateAction<string>> }) => {
+  const [messages, setMessages] = useState<{ sender: "admin" | "user", time: string, diff?: number, msg: string }[]>([])
+  const [maxMsgBoxHeight, setMaxMsgBoxHeight] = useState<number>(0)
+  const msgBoxRef = useRef<null | HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!msgBoxRef.current) return;
+    const maxHeight = msgBoxRef.current?.clientHeight;
+    setMaxMsgBoxHeight(maxHeight || 0)
+    msgBoxRef.current.style.maxHeight = `${maxHeight}px`;
+  }, [])
+  useEffect(() => {
+    if (!msgBoxRef.current) return;
+    msgBoxRef.current.scrollTop = msgBoxRef.current.scrollHeight;
+  }, [messages])
   return (
     <section className="w-full max-w-[98vw] mx-auto sm:mx-0  border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
       <header className="flex items-center justify-between">
@@ -41,7 +56,13 @@ const Messenger = () => {
           </ul>
         </div>
       </header>
-      <div className="grow flex flex-col ">
+      <div
+        id="message-box"
+        ref={msgBoxRef}
+        className={cn(
+          `grow flex flex-col overflow-y-scroll [&::-webkit-scrollbar]:w-2`,
+          { [`max-h-[${maxMsgBoxHeight}px]`]: maxMsgBoxHeight }
+        )}>
         <div
           id="info-div"
           className="flex flex-col items-center mt-auto leading-9 mb-6"
@@ -62,7 +83,30 @@ const Messenger = () => {
             view-profile
           </Button>
         </div>
-        <div id="message-box"></div>
+        <div className="flex flex-col gap-2 pb-1 ">
+          {messages.map((message, id) => <>
+            {id == 0 && message.time &&
+              <span className="mx-auto">
+                {message.time.split(',')[0]}
+              </span>}
+            {id >= 1 && messages[id - 1]?.time.split(',')[0] != message.time.split(',')[0] &&
+              <span className="mx-auto">
+                {messages[id - 1]?.time}
+                {message.time.split(',')[0]}
+              </span>}
+            <div className="ml-auto rounded-full bg-s3 py-2 px-3">
+              <span
+                key={id}
+                className=" text-s4 "
+              >
+                {message.msg}
+              </span>
+              <span className="text-p3 text-xs opacity-70 mt-auto">
+                {message.time.split(',')[1]}
+              </span>
+            </div>
+          </>)}
+        </div>
       </div>
       <footer className="flex justify-between gap-1 items-center">
         <div className="flex gap-1">
@@ -79,13 +123,25 @@ const Messenger = () => {
             placeholder="message"
             value={msg}
             onChange={(e) => { setMsg(e.target.value) }}
+            onKeyDown={(e) => {
+              if (e.key == "Enter") {
+                if (msg.trim().length <= 0) return;
+
+                const formattedDate = format(new Date(), 'dd MMM yyyy, hh:mm a')
+                if (messages.length > 0) {
+                  const diff = formatDistanceToNow(new Date(messages[messages.length - 1].time))
+                  console.log(diff)
+                }
+                console.log(formattedDate)
+                setMessages([...messages, { sender: "user", msg: msg, time: formattedDate }])
+                setMsg("")
+              }
+            }}
           />
           <Emoji16Filled />
         </div>
         <button className="">
           {msg.trim() ? <SendRounded /> : <ThumbUpFilled />}
-
-
         </button>
       </footer>
     </section>
