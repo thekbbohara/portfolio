@@ -1,6 +1,6 @@
-import ContactCodeview from "@/components/contact/ContactCodeview";
-import ContactSidebar from "@/components/contact/ContactSidebar";
-import Messenger from "@/components/contact/Messenger";
+import ContactCodeview from "./ContactCodeview";
+import ContactSidebar from "./ContactSidebar";
+import Messenger from "./Messenger";
 import React from "react";
 
 const Contact = () => {

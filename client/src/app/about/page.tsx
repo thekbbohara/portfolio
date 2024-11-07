@@ -1,10 +1,10 @@
 "use client";
 import React, { Suspense } from "react";
-import AsideAbout from "@/components/about/AsideAbout";
-import Bio from "@/components/about/Bio";
+import AsideAbout from "./AsideAbout";
+import Bio from "./Bio";
+import ProInfo from "./ProInfo";
+import Interests from "./Interests";
 import { useSearchParams } from "next/navigation";
-import ProInfo from "@/components/about/ProInfo";
-import Interests from "@/components/about/Interests";
 
 const AboutContent = () => {
   const searchParams = useSearchParams();
