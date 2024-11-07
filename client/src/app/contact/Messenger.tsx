@@ -1,3 +1,4 @@
+'use client'
 import {
   AddCircleFill,
   CameraFill,
@@ -6,14 +7,16 @@ import {
   Information2Fill,
   MicFill,
   PhoneFill,
+  SendRounded,
   ThumbUpFilled,
   VideoOnFill,
 } from "@/assets/spfyicons";
 import Button from "@/components/ui/Buttons";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Messenger = () => {
+  const [msg, setMsg] = useState<string>("");
   return (
     <section className="w-full max-w-[98vw] mx-auto sm:mx-0  border border-transparent border-l-line sm:border-l-transparent  border-r-line p-4 flex flex-col justify-between">
       <header className="flex items-center justify-between">
@@ -74,11 +77,15 @@ const Messenger = () => {
           <input
             className="bg-transparent min-w-[10ch] w-full outline outline-transparent grow py-1 pl-1"
             placeholder="message"
+            value={msg}
+            onChange={(e) => { setMsg(e.target.value) }}
           />
           <Emoji16Filled />
         </div>
         <button className="">
-          <ThumbUpFilled />
+          {msg.trim() ? <SendRounded /> : <ThumbUpFilled />}
+
+
         </button>
       </footer>
     </section>

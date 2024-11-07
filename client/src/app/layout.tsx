@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Fira_Code } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/nav/Footer";
-import { TwitterXFill, Linkedin, LinkedinSolid } from "@/assets/spfyicons";
+import { TwitterXFill, LinkedinSolid } from "@/assets/spfyicons";
 import Header from "@/components/nav/Header";
 
-const fira = Fira_Code({ subsets: ["latin"] });
+const jetbrain = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "thekbbohara",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fira.className}`}>
+      <body className={`${jetbrain.className} `}>
         <main className="bg-p2 text-s1 text-ellipsis overflow-hidden min-h-svh w-full flex flex-col justify-between">
           <Header
             name="kb-bohara"
