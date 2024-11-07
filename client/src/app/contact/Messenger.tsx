@@ -17,7 +17,9 @@ import { format, formatDistanceToNow } from "date-fns";
 import Image from "next/image";
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
-const Messenger = ({ msg, setMsg }: { msg: string; setMsg: Dispatch<SetStateAction<string>> }) => {
+const Messenger = (
+  { msg, setMsg, name, setName, email, setEmail }:
+    { msg: string; setMsg: Dispatch<SetStateAction<string>>; name: string; setName: Dispatch<SetStateAction<string>>; email: string; setEmail: Dispatch<SetStateAction<string>>; }) => {
   const [messages, setMessages] = useState<{ sender: "admin" | "user", time: string, diff?: number, msg: string }[]>([])
   const [maxMsgBoxHeight, setMaxMsgBoxHeight] = useState<number>(0)
   const msgBoxRef = useRef<null | HTMLDivElement>(null)
@@ -125,6 +127,10 @@ const Messenger = ({ msg, setMsg }: { msg: string; setMsg: Dispatch<SetStateActi
             onChange={(e) => { setMsg(e.target.value) }}
             onKeyDown={(e) => {
               if (e.key == "Enter") {
+                if (!name || !email) {
+                  setName("hi")
+                  setEmail("hi@gmail.com")
+                }
                 if (msg.trim().length <= 0) return;
 
                 const formattedDate = format(new Date(), 'dd MMM yyyy, hh:mm a')
