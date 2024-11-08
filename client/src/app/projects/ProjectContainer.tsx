@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../../components/ui/Buttons';
 import { useSearchParams } from "next/navigation";
-import { Suspense } from 'react';
 
 interface Iproject {
   projectName: string;
@@ -37,36 +36,28 @@ const projectData: Iproject[] = [
     img: "/assets/assign-sync.png",
     href: "https://assign-sync.vercel.app/",
     alt: "assign-sync",
-    tags: ["web-socket", "nextjs"],
+    tags: ["web-socket", "nextjs", "bun"],
   },
 ];
 
 export default function ProjectContainer() {
   const searchParams = useSearchParams();
   const filterParam = searchParams.get("filter");
-  // const [filters, setFilters] = useState<string[]>([]);
   let filters: string[] = [];
-  // Use effect to update filters when filterParam changes
-  // useEffect(() => {
   if (filterParam) {
     try {
       // Convert the 'filter' query parameter into an array of strings
       const jsonString = filterParam.replace(/'/g, '"');
       const parsedFilters: string[] = JSON.parse(jsonString);
 
-      // Set filters state
       filters = parsedFilters;
-      // setFilters(parsedFilters);
     } catch (e) {
       console.error("Failed to parse filter parameter:", e);
-      // setFilters([]); // Set empty filters if JSON parsing fails
       filters = [];
     }
   } else {
-    // setFilters([]); // If no filterParam, reset filters
     filters = [];
   }
-  // }, [filterParam]);
 
   // Filter the project data based on the current filters
   const filteredProject = filters.length > 0
@@ -76,9 +67,9 @@ export default function ProjectContainer() {
     : projectData;
 
   return (
-    <div className="bg-[#00000000]  min-h-screen p-8">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="bg-[#00000000]  p-8 ">
+      <div className="container mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-scroll [&::-webkit-scrollbar]:w-2 ">
           {filteredProject.map((project, id) => (
             <div key={id} className="bg-transparent rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
               <div className="px-1 py-4 text-md">

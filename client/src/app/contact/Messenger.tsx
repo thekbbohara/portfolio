@@ -13,17 +13,33 @@ import {
 } from "@/assets/spfyicons";
 import Button from "@/components/ui/Buttons";
 import cn from "@/utils/cn";
-import { format, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import Image from "next/image";
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 const Messenger = (
+
   { msg, setMsg, name, setName, email, setEmail }:
     { msg: string; setMsg: Dispatch<SetStateAction<string>>; name: string; setName: Dispatch<SetStateAction<string>>; email: string; setEmail: Dispatch<SetStateAction<string>>; }) => {
-  const [messages, setMessages] = useState<{ sender: "admin" | "user", time: string, diff?: number, msg: string }[]>([])
+  const [messages, setMessages] = useState<{
+    sender: "admin" | "user",
+    time: string, diff?: number,
+    msg: React.ReactNode
+  }[]>([])
   const [maxMsgBoxHeight, setMaxMsgBoxHeight] = useState<number>(0)
   const msgBoxRef = useRef<null | HTMLDivElement>(null)
 
+  const sendMsg = () => {
+    if (!name || !email) {
+      setName("hi")
+      setEmail("hi@gmail.com")
+    }
+    if (msg.trim().length <= 0) return;
+
+    const formattedDate = format(new Date(), 'dd MMM yyyy, hh:mm a')
+    setMessages([...messages, { sender: "user", msg: msg, time: formattedDate }])
+    setMsg("")
+  }
   useEffect(() => {
     if (!msgBoxRef.current) return;
     const maxHeight = msgBoxRef.current?.clientHeight;
@@ -96,14 +112,14 @@ const Messenger = (
                 {messages[id - 1]?.time}
                 {message.time.split(',')[0]}
               </span>}
-            <div className="ml-auto rounded-full bg-s3 py-2 px-3">
+            <div className="ml-auto rounded-full bg-s3 py-2 px-3 flex gap-2">
               <span
                 key={id}
                 className=" text-s4 "
               >
                 {message.msg}
               </span>
-              <span className="text-p3 text-xs opacity-70 mt-auto">
+              <span className="text-p3 text-xs opacity-70 mt-auto tracking-[-0.09rem]">
                 {message.time.split(',')[1]}
               </span>
             </div>
@@ -127,27 +143,26 @@ const Messenger = (
             onChange={(e) => { setMsg(e.target.value) }}
             onKeyDown={(e) => {
               if (e.key == "Enter") {
-                if (!name || !email) {
-                  setName("hi")
-                  setEmail("hi@gmail.com")
-                }
-                if (msg.trim().length <= 0) return;
-
-                const formattedDate = format(new Date(), 'dd MMM yyyy, hh:mm a')
-                if (messages.length > 0) {
-                  const diff = formatDistanceToNow(new Date(messages[messages.length - 1].time))
-                  console.log(diff)
-                }
-                console.log(formattedDate)
-                setMessages([...messages, { sender: "user", msg: msg, time: formattedDate }])
-                setMsg("")
+                sendMsg();
               }
             }}
           />
+
           <Emoji16Filled />
+
         </div>
         <button className="">
-          {msg.trim() ? <SendRounded /> : <ThumbUpFilled />}
+          {msg.trim()
+            ? <span onClick={sendMsg}> <SendRounded /></span>
+            : <span onClick={() => {
+              if (!name || !email) {
+                setName("hi")
+                setEmail("hi@gmail.com")
+              }
+              const formattedDate = format(new Date(), 'dd MMM yyyy, hh:mm a')
+              setMessages([...messages, { sender: "user", msg: <ThumbUpFilled className="text-s4" />, time: formattedDate }])
+              console.log("onclick")
+            }}> <ThumbUpFilled /></span>}
         </button>
       </footer>
     </section>

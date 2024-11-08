@@ -56,12 +56,12 @@ const ProjectSidebar = () => {
   };
   const techStack: { name: string; icon: React.ReactNode }[] = [
     { name: "bun", icon: <Bun /> },
-    { name: "docker", icon: <Docker /> },
-    { name: "express", icon: <Express className="fill-s1" /> },
-    { name: "hono", icon: <Hono /> },
+    // { name: "docker", icon: <Docker /> },
+    // { name: "express", icon: <Express className="fill-s1" /> },
+    // { name: "hono", icon: <Hono /> },
     { name: "nextjs", icon: <NextjsFill /> },
     { name: "nodejs", icon: <NodejsLine /> },
-    { name: "react", icon: <ReactjsLine /> },
+    // { name: "react", icon: <ReactjsLine /> },
   ];
   return (
     <aside className="flex flex-col grow min-h-full sm:max-w-64  w-full border border-transparent sm:border-r-line ">
