@@ -1,4 +1,5 @@
 import React from "react";
+import { useMessengerContext } from "./Messenger/provider";
 /* const codeString = `
 const button = document.querySelector('#sendBtn');
 
@@ -14,7 +15,8 @@ button.addEventListener('click', () => {
 })
 `;
  */
-const ContactCodeview = ({ msg, name, email }: { msg?: string; name: string; email: string }) => {
+const ContactCodeview = () => {
+  const { msg, name, email } = useMessengerContext()
   return (
     <code className="grow  w-full p-4 mt-12 hidden lg:block">
       <span className="mr-4">1</span>
