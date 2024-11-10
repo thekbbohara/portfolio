@@ -77,14 +77,14 @@ const Messenger = () => {
                 {message.date}
                 {message.time}
               </span>}
-            <div className="ml-auto rounded-full bg-s3 py-2 px-3 flex gap-2">
+            <div className={cn("leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex gap-2", message.sender === "admin" ? "mr-auto bg-s2" : "ml-auto bg-s3")}>
               <span
                 key={id}
                 className=" text-s4 "
               >
                 {message.msg}
               </span>
-              <span className="text-p3 text-xs opacity-70 mt-auto tracking-[-0.09rem]">
+              <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto tracking-[-0.09rem]">
                 {message.time}
               </span>
             </div>

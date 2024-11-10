@@ -1,3 +1,4 @@
+import Kaira from '@/lib/kaira';
 import { createContext, useState, Dispatch, SetStateAction, ReactNode, useContext, useRef } from 'react';
 
 // Define the types for the context
@@ -36,7 +37,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
   const dialogRef = useRef<null | HTMLDialogElement>(null); // Reference to the dialog element
 
   // Send message function
-  const sendMsg = (message?: msgProps) => {
+  const sendMsg = async (message?: msgProps) => {
     if (!name || !email) {
       if (dialogRef.current) {
         dialogRef.current.showModal(); // Show the dialog if name or email is missing
@@ -65,6 +66,19 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
 
     // Clear the message input field
     setMsg('');
+    if (newMessage.sender == "user" && newMessage.msg) {
+      console.log("requesting response")
+      const res = await Kaira(name, newMessage.msg.toString());
+      if (res) {
+        console.log("got res")
+        const adminMsg: TMessage = {
+          ...res,
+          time,
+          date
+        }
+        setMessages((prevMessages) => [...prevMessages, adminMsg])
+      }
+    }
   };
 
   return (
