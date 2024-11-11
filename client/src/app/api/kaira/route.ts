@@ -82,7 +82,7 @@ export async function POST(request: Request) {
       generationConfig,
     });
     const output: { sender: "admin", msg: string } = { sender: "admin", msg: result.response.text() }
-    const msg = output.msg.includes("output:") ? output.msg.split("output:")[1] : output.msg
+    const msg = output.msg.includes("output:") ? output.msg.split("output:")[output.msg.split("output:").length - 1] : output.msg
     output.msg = msg
     parts.pop()
     parts.push({ text: `output: ${output.msg}` })
