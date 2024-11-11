@@ -1,5 +1,5 @@
 import Kaira from '@/lib/kaira';
-import { createContext, useState, Dispatch, SetStateAction, ReactNode, useContext, useRef } from 'react';
+import { createContext, useState, Dispatch, SetStateAction, ReactNode, useContext, useRef, useLayoutEffect } from 'react';
 
 // Define the types for the context
 export type msgProps = { sender?: "admin" | "user"; msg?: ReactNode }
@@ -35,7 +35,10 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
   const [email, setEmail] = useState<string>('');
   const [messages, setMessages] = useState<TMessage[]>([]);
   const dialogRef = useRef<null | HTMLDialogElement>(null); // Reference to the dialog element
-
+  useLayoutEffect(() => {
+    setName(localStorage.getItem("name") || "")
+    setEmail(localStorage.getItem("email") || "")
+  }, [])
   // Send message function
   const sendMsg = async (message?: msgProps) => {
     if (!name || !email) {

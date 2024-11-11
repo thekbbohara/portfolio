@@ -39,6 +39,8 @@ const UsrInfoDialog = ({ ...props }) => {
               const name = nameRef.current?.value
               const email = emailRef.current?.value
               if (name && email) {
+                localStorage.setItem("name", name)
+                localStorage.setItem("email", email)
                 setName(name)
                 setEmail(email)
                 dialogRef.current?.close()
