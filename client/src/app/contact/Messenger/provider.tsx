@@ -1,5 +1,5 @@
 import Kaira from '@/lib/kaira';
-import { createContext, useState, Dispatch, SetStateAction, ReactNode, useContext, useRef, useLayoutEffect } from 'react';
+import { createContext, useState, Dispatch, SetStateAction, ReactNode, useContext, useRef, useEffect } from 'react';
 
 // Define the types for the context
 export type msgProps = { sender?: "admin" | "user"; msg?: ReactNode }
@@ -35,10 +35,15 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
   const [email, setEmail] = useState<string>('');
   const [messages, setMessages] = useState<TMessage[]>([]);
   const dialogRef = useRef<null | HTMLDialogElement>(null); // Reference to the dialog element
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setMessages(JSON.parse(localStorage.getItem("messages")!) || [])
     setName(localStorage.getItem("name") || "")
     setEmail(localStorage.getItem("email") || "")
   }, [])
+  useEffect(() => {
+    if (messages.length == 0) return
+    localStorage.setItem("messages", JSON.stringify(messages))
+  }, [messages])
   // Send message function
   const sendMsg = async (message?: msgProps) => {
     if (!name || !email) {
@@ -66,6 +71,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
 
     // Update the messages state with the new message
     setMessages((prevMessages) => [...prevMessages, newMessage]);
+    localStorage.setItem("messages", JSON.stringify(messages))
 
     // Clear the message input field
     setMsg('');
@@ -79,7 +85,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
           time,
           date
         }
-        console.log({ adminMsg })
+        // console.log({ adminMsg })
         setMessages((prevMessages) => [...prevMessages, adminMsg])
       }
     }
