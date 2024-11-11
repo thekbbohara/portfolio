@@ -76,6 +76,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
           time,
           date
         }
+        console.log({ adminMsg })
         setMessages((prevMessages) => [...prevMessages, adminMsg])
       }
     }
