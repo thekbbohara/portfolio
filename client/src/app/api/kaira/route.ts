@@ -31,11 +31,17 @@ export async function POST(request: Request) {
   if (!query) return;
   parts.push({ text: `${name || "name"}:${query}` }, { text: "kb: " })
 
-  const result = await model.generateContent({
-    contents: [{ role: "user", parts }],
-    generationConfig,
-  });
-  const output: { sender: "admin", msg: string } = { sender: "admin", msg: result.response.text() }
-  return Response.json(output)
+  try {
+    const result = await model.generateContent({
+      contents: [{ role: "user", parts }],
+      generationConfig,
+    });
+    const output: { sender: "admin", msg: string } = { sender: "admin", msg: result.response.text() }
+    parts.pop()
+    parts.push({ text: `kb: ${output.msg}` })
+    return Response.json(output)
+  } catch {
+    return Response.json({ sender: "admin", msg: null })
+  }
 
 }

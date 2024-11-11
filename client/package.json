@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "next build && next start",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
-    "date-fns": "^4.1.0",
     "next": "14.2.6",
     "react": "^18",
     "react-dom": "^18",
