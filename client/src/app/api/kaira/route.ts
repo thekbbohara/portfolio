@@ -74,7 +74,7 @@ export async function POST(request: Request) {
   }
 
   const parts: Part[] = cacheParts[email] || []
-  parts.push({ text: `${name}:${query}` }, { text: "output: " })
+  parts.push({ text: `name:${name}, query:${query}` }, { text: "output: " })
 
   try {
     const result = await model.generateContent({
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
     parts.pop()
     parts.push({ text: `output: ${output.msg}` })
     const newChats = [
-      { text: `${name}:${query}` },
+      { text: `name:${name}, query:${query}` },
       { text: `output: ${output.msg}` }
     ];
     await UserModel.findOneAndUpdate(
