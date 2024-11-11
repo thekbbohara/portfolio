@@ -68,7 +68,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
     setMsg('');
     if (newMessage.sender == "user" && newMessage.msg) {
       console.log("requesting response")
-      const res = await Kaira(name, newMessage.msg.toString());
+      const res = await Kaira(name, email, newMessage.msg.toString());
       if (res) {
         console.log("got res")
         const adminMsg: TMessage = {

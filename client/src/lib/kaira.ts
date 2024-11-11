@@ -1,4 +1,4 @@
-const Kaira = async (name: string, query: string): Promise<{ sender: "admin", msg: string } | undefined> => {
+const Kaira = async (name: string, email: string, query: string): Promise<{ sender: "admin", msg: string } | undefined> => {
   const res = await fetch("/api/kaira", {
     method: "POST",
     headers: {
@@ -6,7 +6,8 @@ const Kaira = async (name: string, query: string): Promise<{ sender: "admin", ms
     },
     body: JSON.stringify({
       name,
-      query
+      query,
+      email
     })
   })
   const output = await res.json()
