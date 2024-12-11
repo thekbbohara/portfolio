@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroContent = () => {
   return (
-    <section className="flex flex-col  gap-20 px-6 sm:px-0 sm:mx-0 mx-auto">
+    <section className="flex flex-col gap-20 sm:gap-4 px-6 sm:px-0 sm:mx-0 mx-auto">
       <h1 className="relative text-s4 flex flex-col sm:leading-[1]">
         {/* <div className="pointer-events-none max-w-48 w-[60vw] h-48 rounded-lg sm:-top-6 -left-18 sm:left-16 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div> */}
         <strong className="not-italic flex sm:flex-row flex-col opacity-75">
@@ -27,15 +27,15 @@ const HeroContent = () => {
       </h1>
       <div className="relative cursor-default">
         <p className="text-s1 sm:block hidden">
-          {"// complete the game to continue".toString()}
+          {"// you can chat with me in contact page".toString()}
         </p>
         <p className="text-s1 sm:block hidden">
           {"// you can also see it on my Github page".toString()}
         </p>
-        <p className="text-s1 block sm:hidden">
+        <p className="text-s1 block sm:hidden ">
           {"// find my profile on Github:".toString()}
         </p>
-        <p className="text-code z-10">
+        <p className="text-code z-10 sm:mt-2">
           <span className="text-s3">const</span>{" "}
           <span className="text-s2">githubLink</span>{" "}
           <span className="text-s4">=</span>{" "}
