@@ -42,8 +42,8 @@ export const GET = async () => {
     const data = JSON.parse(fileContent);
 
     console.log("Data retrieved from /tmp/activity.json:", data);
-    if (Date.now() - data.updateTime >= 5 * 60 * 1000) {
-      // 5 minutes = 5 * 60 * 1000 milliseconds
+    if (Date.now() - data.updateTime >= 7 * 60 * 1000) {
+      // 7 minutes = 7 * 60 * 1000 milliseconds
       console.log("offline...");
       return new Response(JSON.stringify({ activity: null }), {
         status: 200,
