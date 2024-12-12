@@ -7,7 +7,11 @@ export const POST = async (req: Request) => {
     const data = await req.json();
 
     // Save the data to /tmp/activity.json
-    await fs.writeFile(FILE_PATH, JSON.stringify(data), "utf8");
+    await fs.writeFile(
+      FILE_PATH,
+      JSON.stringify({ ...data, updateTime: Date.now() }),
+      "utf8",
+    );
 
     console.log("Data saved to /tmp/activity.json:", data);
     return new Response(JSON.stringify({ success: true, data }), {
@@ -38,6 +42,13 @@ export const GET = async () => {
     const data = JSON.parse(fileContent);
 
     console.log("Data retrieved from /tmp/activity.json:", data);
+    if (Date.now() - data.updateTime >= 5 * 60 * 1000) {
+      // 5 minutes = 5 * 60 * 1000 milliseconds
+      console.log("offline...");
+      return new Response(JSON.stringify({ activity: null }), {
+        status: 200,
+      });
+    }
     return new Response(JSON.stringify({ ...data }), {
       status: 200,
     });
