@@ -23,6 +23,8 @@ export const ActivityCard = ({ className }: { className: string }) => {
       if (data.activity !== null) {
         setActivity(data);
         console.log(data);
+      } else {
+        setActivity(null);
       }
     } catch (error) {
       console.error("Error fetching activity:", error);
