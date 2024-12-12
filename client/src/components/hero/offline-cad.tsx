@@ -4,13 +4,13 @@ export const OfflineCard = () => {
   const getTimeBasedActivity = () => {
     const hours = new Date().getHours();
 
-    if (hours >= 0 && hours < 6) return "Sleeping 🛌";
-    if (hours >= 11 && hours < 12) return "Eating brunch 🍳";
-    if (hours >= 15 && hours < 16) return "Lunching 🍔";
-    if (hours >= 18 && hours < 22) return "Dinner time 🍝";
+    if (hours >= 0 && hours < 6) return "Sleeping ";
+    if (hours >= 11 && hours < 12) return "Eating brunch ";
+    if (hours >= 15 && hours < 16) return "Lunching ";
+    if (hours >= 18 && hours < 22) return "Dinner time ";
     // return " 🌌"; // Default status for all other times
     // return "It's a secret 🎥"; // Default status for all other times
-    return "Wandering between worlds 🌌";
+    return "Wandering between worlds ";
   };
 
   const activity = getTimeBasedActivity();
