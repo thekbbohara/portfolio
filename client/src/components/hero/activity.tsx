@@ -1,36 +1,68 @@
 "use client";
 import cn from "@/utils/cn";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import { OfflineCard } from "./offline-cad";
+import { ActiveCard } from "./active-cad";
 
 export const ActivityCard = ({ className }: { className: string }) => {
-  // Initialize time state
-  const [time, setTime] = useState("01:30");
+  const [activity, setActivity] = useState<null | {
+    activity: string;
+    title: string;
+    started_time: string;
+  }>(null);
 
-  // Function to add 1 second
-  const incrementTime = () => {
-    const [minutes, seconds] = time.split(":").map(Number);
-    let newMinutes = minutes;
-    let newSeconds = seconds + 1;
-    if (newSeconds >= 60) {
-      newSeconds = 0;
-      newMinutes += 1;
+  // Function to poll for activity
+  const poolActivity = async () => {
+    try {
+      console.log("long polling...");
+      const res = await fetch("/api/activity");
+      if (!res.ok) {
+        throw new Error("Failed to fetch activity");
+      }
+      const data = await res.json();
+      if (data.activity !== null) {
+        setActivity(data);
+        console.log(data);
+      }
+    } catch (error) {
+      console.error("Error fetching activity:", error);
     }
-    // Format time as MM:SS
-    const formattedTime = `${String(newMinutes).padStart(2, "0")}:${String(newSeconds).padStart(2, "0")}`;
-    setTime(formattedTime);
   };
-  // useEffect to run incrementTime every second
+  // Fetch the initial activity data synchronously with useLayoutEffect
+  useLayoutEffect(() => {
+    poolActivity();
+    // const fetchInitialData = async () => {
+    //   console.log("Fetching initial activity...");
+    //   const res = await fetch("/api/activity");
+    //   if (!res.ok) {
+    //     console.error("Failed to fetch initial activity");
+    //     return;
+    //   }
+    //   const data = await res.json();
+    //   if (data.activity) {
+    //     setActivity(data);
+    //   }
+    // };
+
+    // fetchInitialData();
+  }, []); // Runs only once when the component is mounted
+
+  // Set up long polling every 6 seconds with useEffect after initial data is fetched
   useEffect(() => {
-    const interval = setInterval(incrementTime, 1000);
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, [time]);
+    if (!activity) return; // Only start long polling if we have the initial activity data
+    const intervalId = setInterval(() => {
+      poolActivity();
+    }, 6000);
+
+    // Cleanup on unmount
+    return () => clearInterval(intervalId);
+  }, [activity]); // Dependency on activity ensures polling starts after data is available
+
   return (
     <div className={cn("relative max-w-96 max-h-[70vh]", className)}>
-      <div className="pointer-events-none max-w-48 w-[60vw] h-48 sm:h-60 rounded-lg sm:-top-24 -left-18 sm:left-0 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
-      <OfflineCard />
-      <div className="z-0 pointer-events-none select-none max-w-80 w-[90vw] h-32 sm:h-60 -top-6 -right-12 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
+      <div className="overflow-hidden pointer-events-none max-w-48 w-[60vw] h-48 sm:h-60 rounded-lg sm:-top-24 -left-18 sm:left-0 rotate-6 absolute bg-a2 blur-3xl opacity-30"></div>
+      {activity ? <ActiveCard activity={activity} /> : <OfflineCard />}
+      <div className="overflow-hidden z-0 pointer-events-none select-none max-w-80 w-[90vw] h-32 sm:h-60 -top-6 -right-12 rounded-full absolute bg-s3 blur-3xl opacity-30"></div>
     </div>
   );
 };
