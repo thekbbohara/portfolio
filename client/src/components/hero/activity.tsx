@@ -51,10 +51,9 @@ export const ActivityCard = ({ className }: { className: string }) => {
 
   // Set up long polling every 6 seconds with useEffect after initial data is fetched
   useEffect(() => {
-    if (!activity) return; // Only start long polling if we have the initial activity data
     const intervalId = setInterval(() => {
       poolActivity();
-    }, 6000);
+    }, 5000);
 
     // Cleanup on unmount
     return () => clearInterval(intervalId);
