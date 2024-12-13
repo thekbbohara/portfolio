@@ -38,13 +38,15 @@ const model = genAI.getGenerativeModel({
   generationConfig,
 });
 
-export async function chat(userMessage: string) {
+export async function chat(userMessage: string): Promise<string[]> {
   const res = await model.generateContent(userMessage);
-
   // Extract the 'reply' array from the response
-  const botResponses = res.response.text();
-
-  return botResponses;
+  try {
+    const botResponses: { reply: string[] } = JSON.parse(res.response.text());
+    return botResponses.reply;
+  } catch {
+    return ["null"];
+  }
 }
 
 // Example Usage:
