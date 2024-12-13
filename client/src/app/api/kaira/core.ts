@@ -38,7 +38,7 @@ const model = genAI.getGenerativeModel({
   generationConfig,
 });
 
-async function chat(userMessage: string) {
+export async function chat(userMessage: string) {
   const res = await model.generateContent(userMessage);
 
   // Extract the 'reply' array from the response
@@ -48,11 +48,11 @@ async function chat(userMessage: string) {
 }
 
 // Example Usage:
-(async () => {
-  const userMessage = "lund le le muh me bsdk";
-  const botResponses = await chat(userMessage);
+// (async () => {
+//   const userMessage = "lund le le muh me bsdk";
+//   const botResponses = await chat(userMessage);
 
-  console.log(`User: ${userMessage}`);
-  console.log(`kb: ${botResponses}`);
-  // botResponses.forEach(part => console.log(`KB: ${part}`));
-})();
+//   console.log(`User: ${userMessage}`);
+//   console.log(`kb: ${botResponses}`);
+//   // botResponses.forEach(part => console.log(`KB: ${part}`));
+// })();
