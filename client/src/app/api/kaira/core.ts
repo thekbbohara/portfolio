@@ -3,7 +3,7 @@ import {
   GoogleGenerativeAI,
   SchemaType,
 } from "@google/generative-ai";
-import { system_instruction } from "./SYSTEM";
+import system_instruction from "./SYSTEM";
 
 const { GEMINI_API_KEY } = process.env;
 
@@ -38,7 +38,7 @@ const model = genAI.getGenerativeModel({
   generationConfig,
 });
 
-async function chat(userMessage) {
+async function chat(userMessage: string) {
   const res = await model.generateContent(userMessage);
 
   // Extract the 'reply' array from the response
