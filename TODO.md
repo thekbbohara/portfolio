@@ -1,24 +1,6 @@
 ## TODOs!
 
 ### Frontend first.
-
-### utils
-
-- [x] cn.ts
-
-- [ ] 1.Create components:
-  ### UI
-  - [x] Buttons.tsx
-  - [x] Card.tsx
-  - [x] Check.tsx
-  - [ ] Star.tsx
-  - [ ] IconBox.tsx
-  - [ ] TechnologiesLogos.tsx
-  - [ ] TechnologiesRow.tsx
-  - [x] HeaderText.tsx
-  - [ ] SocialMedia.tsx
-  - [ ] Comments.tsx
-  - [ ] CodeSnippet.tsx
   ### Navbar
   - [x] Header.tsx
   - [x] Footer.tsx
@@ -27,17 +9,13 @@
   - [x] AboutMeSidebar.tsx
   - [x] ProjectFilterSidebar.tsx
   - [x] ContactMeSidebar.tsx
-  ### SnakeGame
-  - [ ] GameBoard.tsx
-  - [ ] GameCanvas.tsx
-  - [ ] GameGuide.tsx
-  - [ ] Food.tsx
-  - [ ] FoodLeft.tsx
+  ### Presence
+  - [x] Current activity like dc
 
 ### Mobile First...
 
-- [ ] 2.Pages:
-  - [ ] Home.tsx
-  - [ ] AboutMe.tsx
-  - [ ] Projects.tsx
-  - [ ] ContactMe.tsx
+- [x] 2.Pages:
+  - [x] Home.tsx
+  - [x] AboutMe.tsx
+  - [x] Projects.tsx
+  - [x] ContactMe.tsx
