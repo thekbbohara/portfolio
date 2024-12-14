@@ -90,14 +90,14 @@ const Messenger = () => {
                       <div
                         key={i}
                         className={cn(
-                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex gap-2",
+                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col gap-2",
                           message.sender === "admin"
                             ? "mr-auto bg-s2"
                             : "ml-auto bg-s3",
                         )}
                       >
                         <span className=" text-s4 ">{reply}</span>
-                        <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto tracking-[-0.09rem]">
+                        <span className="text-p3 min-w-fit text-xs opacity-70 ml-auto mt-auto tracking-[-0.09rem] flex items-end justify-end">
                           {message.time}
                         </span>
                       </div>
@@ -111,7 +111,7 @@ const Messenger = () => {
                     <div
                       key={id}
                       className={cn(
-                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex gap-2",
+                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col gap-2",
                         message.sender === "admin"
                           ? "mr-auto bg-s2"
                           : "ml-auto bg-s3",
@@ -123,7 +123,7 @@ const Messenger = () => {
                           : message.msg.toString()}
                       </span>
 
-                      <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto tracking-[-0.09rem]">
+                      <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto ml-auto tracking-[-0.09rem] flex items-end justify-end">
                         {message.time}
                       </span>
                     </div>
