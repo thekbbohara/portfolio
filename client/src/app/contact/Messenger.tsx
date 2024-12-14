@@ -96,7 +96,30 @@ const Messenger = () => {
                             : "ml-auto bg-s3",
                         )}
                       >
-                        <span className=" text-s4 ">{reply}</span>
+                        <span className=" text-s4 ">
+                          {reply.includes("https://") ? (
+                            <>
+                              {!reply.startsWith("https://") && (
+                                <span>{`${reply.split("https://")[0]}`}</span>
+                              )}
+
+                              <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline"
+                                href={`https://${reply.split("https://")[1].split(" ")[0]}`}
+                              >
+                                {`https://${reply.split("https://")[1].split(" ")[0]}`}
+                              </a>
+                              {reply.split("https://")[1].split(" ")[1] && (
+                                <span>{`${reply.split("https://")[1].split(" ")[1]}`}</span>
+                              )}
+                            </>
+                          ) : (
+                            reply
+                          )}
+                        </span>
+
                         <span className="text-p3 min-w-fit text-xs opacity-70 ml-auto mt-auto tracking-[-0.09rem] flex items-end justify-end">
                           {message.time}
                         </span>
