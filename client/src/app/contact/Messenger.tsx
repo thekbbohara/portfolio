@@ -128,9 +128,6 @@ const Messenger = () => {
                   })
                 : message.msg &&
                   message.msg.toString() != "null" && (
-                    // <span key={id} className=" text-s4 ">
-                    //   {message.msg.toString()}
-                    // </span>
                     <div
                       key={id}
                       className={cn(
