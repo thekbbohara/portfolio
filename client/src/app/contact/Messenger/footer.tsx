@@ -13,6 +13,13 @@ import { useMessengerContext } from "./provider";
 const MessengerFooter = () => {
   const { msg, setMsg, sendMsg } = useMessengerContext();
 
+  const handleSend = () => {
+    if (typeof msg === "string" && msg.trim()) {
+      sendMsg({ msg }); // Send a string message
+    } else if (React.isValidElement(msg)) {
+      sendMsg({ msg }); // Send a React element
+    }
+  };
   return (
     <footer className="flex justify-between gap-1 items-center">
       <div className="flex gap-1">
@@ -27,10 +34,8 @@ const MessengerFooter = () => {
         <input
           className="bg-transparent min-w-[10ch] w-full outline outline-transparent grow py-1 pl-1"
           placeholder="message"
-          value={typeof msg == "string" ? msg : ""}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            setMsg(e.target.value);
-          }}
+          value={typeof msg == "string" ? msg : msg?.toString()}
+          onChange={(e) => setMsg(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               sendMsg();
@@ -39,34 +44,19 @@ const MessengerFooter = () => {
         />
         <Emoji16Filled />
       </div>
-      {/* <button className="">
-        {msg.trim() ? (
-          <span onClick={() => sendMsg()}>
-            <SendRounded />
-          </span>
-        ) : (
-          <span
-            onClick={() => {
-              sendMsg({ sender: 'user', msg: <ThumbUpFilled className="text-s4" /> });
-              console.log('onclick');
-            }}
-          >
-            <ThumbUpFilled />
-          </span>
-        )}
-      </button> */}
 
       <button className="">
-        {typeof msg == "string" && msg.trim() ? (
+        {typeof msg === "string" && msg.trim() ? (
           <span onClick={() => sendMsg()}>
             <SendRounded />
           </span>
         ) : (
           <span
             onClick={() => {
+              // Send message with JSX element (ThumbUpFilled icon)
               sendMsg({
                 sender: "user",
-                msg: "👍",
+                msg: <ThumbUpFilled className="text-s4" />, // JSX element being sent
               });
             }}
           >
