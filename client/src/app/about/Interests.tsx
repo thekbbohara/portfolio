@@ -9,7 +9,7 @@ const Interests = () => {
     "* currently reading: 48 law of power.",
     "* anime : one peice.",
     "* sensei (先生): Eiichiro Oda",
-    "* music: scared by me",
+    "* music: my own music.",
     "* sometime i write screenplay & songs",
     "* love Keanu Reeves",
     "* a bit into unixporn",
