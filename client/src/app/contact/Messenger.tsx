@@ -90,7 +90,7 @@ const Messenger = () => {
                       <div
                         key={i}
                         className={cn(
-                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col gap-2",
+                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col ",
                           message.sender === "admin"
                             ? "mr-auto bg-s2"
                             : "ml-auto bg-s3",
@@ -134,7 +134,7 @@ const Messenger = () => {
                     <div
                       key={id}
                       className={cn(
-                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col gap-2",
+                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col",
                         message.sender === "admin"
                           ? "mr-auto bg-s2"
                           : "ml-auto bg-s3",
