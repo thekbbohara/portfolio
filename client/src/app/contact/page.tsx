@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import ContactCodeview from "./ContactCodeview";
 import ContactSidebar from "./ContactSidebar";
 import Messenger from "./Messenger";
