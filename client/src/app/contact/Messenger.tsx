@@ -5,6 +5,7 @@ import cn from "@/utils/cn";
 import Image from "next/image";
 import React, {
   Dispatch,
+  ReactNode,
   SetStateAction,
   useEffect,
   useRef,
@@ -14,11 +15,10 @@ import UsrInfoDialog from "./usrInfoDialog";
 import MessengerHeader from "./Messenger/header";
 import { useMessengerContext } from "./Messenger/provider";
 import MessengerFooter from "./Messenger/footer";
-import { isArray } from "util";
 
 export interface IMessenger {
-  msg: string;
-  setMsg: Dispatch<SetStateAction<string>>;
+  msg: string | ReactNode;
+  setMsg: Dispatch<SetStateAction<string | ReactNode>>;
   name: string;
   setName: Dispatch<SetStateAction<string>>;
   email: string;
@@ -76,6 +76,7 @@ const Messenger = () => {
             <>
               {id == 0 && <span className="mx-auto">{message.date}</span>}
               {id >= 1 &&
+                message.msg &&
                 message.msg.toString() != "null" &&
                 message.date != message.date && (
                   <span className="mx-auto">
@@ -91,13 +92,14 @@ const Messenger = () => {
                     : "ml-auto bg-s3",
                 )}
               >
-                {isArray(message.msg)
+                {Array.isArray(message.msg)
                   ? message.msg.map((reply, i) => (
                       <span key={i} className=" text-s4 ">
                         {reply}
                       </span>
                     ))
-                  : message.msg.toString() != "null" && (
+                  : message.msg &&
+                    message.msg.toString() != "null" && (
                       <span key={id} className=" text-s4 ">
                         {message.msg}
                       </span>

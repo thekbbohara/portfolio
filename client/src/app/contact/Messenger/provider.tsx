@@ -11,7 +11,10 @@ import {
 } from "react";
 
 // Define the types for the context
-export type msgProps = { sender?: "admin" | "user"; msg?: string | string[] };
+export type msgProps = {
+  sender?: "admin" | "user";
+  msg?: string | string[];
+};
 export type TMessage = {
   sender: "admin" | "user";
   time: string;
@@ -63,6 +66,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
       }
       return;
     }
+    if (!msg) return;
     if (msg.trim().length <= 0) {
       return;
     }
