@@ -85,22 +85,24 @@ const Messenger = () => {
                   </span>
                 )}
               {Array.isArray(message.msg)
-                ? message.msg.map((reply: string, i) => (
-                    <div
-                      key={i}
-                      className={cn(
-                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex gap-2",
-                        message.sender === "admin"
-                          ? "mr-auto bg-s2"
-                          : "ml-auto bg-s3",
-                      )}
-                    >
-                      <span className=" text-s4 ">{reply}</span>
-                      <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto tracking-[-0.09rem]">
-                        {message.time}
-                      </span>
-                    </div>
-                  ))
+                ? message.msg.map((reply: string, i) => {
+                    return reply == "null" ? null : (
+                      <div
+                        key={i}
+                        className={cn(
+                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex gap-2",
+                          message.sender === "admin"
+                            ? "mr-auto bg-s2"
+                            : "ml-auto bg-s3",
+                        )}
+                      >
+                        <span className=" text-s4 ">{reply}</span>
+                        <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto tracking-[-0.09rem]">
+                          {message.time}
+                        </span>
+                      </div>
+                    );
+                  })
                 : message.msg &&
                   message.msg.toString() != "null" && (
                     // <span key={id} className=" text-s4 ">
