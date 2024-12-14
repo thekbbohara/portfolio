@@ -1,6 +1,8 @@
 import {
+  Content,
   GenerationConfig,
   GoogleGenerativeAI,
+  Part,
   SchemaType,
 } from "@google/generative-ai";
 import system_instruction from "./SYSTEM";
@@ -35,16 +37,23 @@ const generationConfig: GenerationConfig = {
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction: system_instruction,
-  generationConfig,
 });
 
-export async function chat(userMessage: string): Promise<string[]> {
-  const res = await model.generateContent(userMessage);
+export async function chat(
+  parts: Content[],
+  userMessage?: string,
+): Promise<string[]> {
+  const res = await model.generateContent({
+    contents: parts,
+    generationConfig,
+  });
   // Extract the 'reply' array from the response
   try {
     const botResponses: { reply: string[] } = JSON.parse(res.response.text());
+    // console.log(botResponses);
     return botResponses.reply;
   } catch {
+    // console.log("err", "['null']");
     return ["null"];
   }
 }
