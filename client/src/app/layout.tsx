@@ -13,23 +13,27 @@ export const viewport: Viewport = {
 };
 export const metadata: Metadata = {
   title: "thekbbohara",
-  description: "thekbbohara: fullstack developer portfolio website.",
+  description:
+    "Fullstack developer available for on-site, remote, contract, or freelance opportunities. Experienced in web development with expertise in MERN stack, Next.js, Remix, and more. Contact me for top-tier development solutions.",
   keywords: [
-    "portfolio",
-    "thekbbohara",
-    "kbbohara",
-    "nepali fullstack developer",
     "fullstack developer",
+    "remote fullstack developer",
+    "contract fullstack developer",
+    "freelance fullstack developer",
     "web developer",
-    "mern developer",
-    "nextjs developer",
-    "remix developer",
+    "MERN stack developer",
+    "Next.js developer",
+    "React developer",
+    "Node.js developer",
+    "freelance developer",
+    "remote developer",
+    "fullstack development services",
   ],
   category: "Portfolio",
   creator: "thekbbohara",
   metadataBase: new URL("https://kbbohara.com.np"),
   openGraph: {
-    title: "thekbbohara | fullstack developer",
+    title: "thekbbohara | Fullstack Developer",
     description:
       "Explore the best portfolio of kb bohara. The best fullstack developer. Check out my work, skills, and contact information.",
     images: [
@@ -43,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "thekbbohara | fullstack developer",
+    title: "thekbbohara | Fullstack Developer",
     description:
       "kbbohara.com.np - explore the best portfolio of kb bohara. The best fullstack developer. Check out my work, skills, and contact information.",
     creator: "@thekbbohara",
