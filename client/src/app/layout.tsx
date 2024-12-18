@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Explore the best portfolio of kb bohara. The best fullstack developer. Check out my work, skills, and contact information.",
     images: [
       {
-        url: "./public/assets/og-image.png",
+        url: "https://kbbohara.com.np/assets/og-image.png",
         width: 1200,
         height: 630,
         alt: "Kb Bohara' portfolio website",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     site: "@thekbbohara",
     images: [
       {
-        url: "/assets/og-image.png",
+        url: "https://kbbohara.com.np/assets/og-image.png",
         width: 1200,
         height: 630,
         alt: "thekbbohara",
