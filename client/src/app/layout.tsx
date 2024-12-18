@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https:kbbohara.com.np",
+    canonical: "https//:kbbohara.com.np",
   },
 };
 
