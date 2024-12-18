@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "thekbbohara | Fullstack Developer",
     description:
-      "Explore the best portfolio of kb bohara. The best fullstack developer. Check out my work, skills, and contact information.",
+      "A skilled fullstack developer available for remote, on-site, contract, or freelance opportunities. With expertise in modern web technologies, I deliver high-quality solutions across various industries. Explore my portfolio to see my work, skills, and experience.",
     images: [
       {
         url: "https://kbbohara.com.np/assets/og-hello.png",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "thekbbohara | Fullstack Developer",
     description:
-      "kbbohara.com.np - explore the best portfolio of kb bohara. The best fullstack developer. Check out my work, skills, and contact information.",
+      "A skilled fullstack developer, available for remote, on-site, contract, or freelance projects. I specialize in creating robust web solutions with the latest technologies. Check out my portfolio to learn more and get in touch.",
     creator: "@thekbbohara",
     site: "@thekbbohara",
     images: [
