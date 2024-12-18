@@ -39,7 +39,7 @@ const About = () => (
   <>
     {/* Add meta tags dynamically */}
     <Head>
-      <title>About | Kb Bohara - Minimalist Fullstack Developer</title>
+      <title>About | Kb Bohara - The fullstack developer</title>
       <meta
         name="description"
         content="Kb Bohara, a minimalist fullstack developer with a passion for creating useful and innovative solutions. Experienced in frameworks like Next.js, Express.js, and Hono, proficient with tools like Neovim, Docker, and Tailwind CSS. Loves coding, philosophy, and Unix aesthetics."
@@ -56,7 +56,7 @@ const About = () => (
       />
       <meta
         property="og:description"
-        content="Kb Bohara is a fullstack developer with expertise in modern web technologies like Next.js, Express.js, and MongoDB. Known for a minimalist coding style and a passion for efficient, clean solutions, Kb crafts exceptional digital experiences while embracing a Unix-inspired workflow."
+        content="Learn about Kb Bohara, the fullstack developer skilled in frameworks like Next.js, Remix.js, Express.js, and tools like Docker and git."
       />
       <meta
         property="og:image"
@@ -71,7 +71,7 @@ const About = () => (
       />
       <meta
         name="twitter:description"
-        content="Learn about Kb Bohara, the fullstack developer skilled in frameworks like Next.js, Remix.js, Express.js, and Hono, and tools like Docker and Neovim. A coder who loves philosophy, anime, and balance in life."
+        content="Learn about Kb Bohara, the fullstack developer skilled in frameworks like Next.js, Remix.js, Express.js, and tools like Docker and git."
       />
       <meta
         name="twitter:image"
