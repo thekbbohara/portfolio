@@ -26,20 +26,23 @@ export const useMessengerContext = () => {
 };
 
 // Update this in your MessengerProvider
+
 export type msgProps = {
   sender?: "admin" | "user";
-  msg?: string | string[] | ReactNode; // Allow ReactNode (JSX elements) in msg
+  msg?: ReactNode; // Allow ReactNode (JSX elements) in msg
+  type?: "string" | "array" | "image" | "icon" | "audio" | "video"; // Added type
 };
+
 export type TMessage = {
   sender: "admin" | "user";
   time: string;
   date: string;
-  msg: string | ReactNode; // Allow ReactNode in addition to strings
+  msg: ReactNode; // Allow ReactNode in addition to strings
+  type: "string" | "array" | "image" | "icon" | "audio" | "video"; // Added type
 };
-
 interface IMessengerContext {
-  msg: string | ReactNode; // Allow both strings and ReactNode
-  setMsg: Dispatch<SetStateAction<string | ReactNode>>;
+  msg: ReactNode; // Allow both strings and ReactNode
+  setMsg: Dispatch<SetStateAction<ReactNode>>;
   name: string;
   setName: Dispatch<SetStateAction<string>>;
   email: string;
@@ -54,7 +57,7 @@ interface MessengerProviderProps {
   children: ReactNode; // Allow any valid ReactNode as children
 }
 export const MessengerProvider = ({ children }: MessengerProviderProps) => {
-  const [msg, setMsg] = useState<string | ReactNode>(""); // Updated to string | ReactNode
+  const [msg, setMsg] = useState<ReactNode>(""); // Updated to string | ReactNode
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [messages, setMessages] = useState<TMessage[]>([]);
@@ -71,6 +74,61 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
     localStorage.setItem("messages", JSON.stringify(messages));
   }, [messages]);
 
+  // const sendMsg = async (message?: msgProps) => {
+  //   if (!name || !email) {
+  //     if (dialogRef.current) {
+  //       dialogRef.current.showModal();
+  //     }
+  //     return;
+  //   }
+  //   // Only proceed if msg is valid
+  //   debugger;
+  //   if (
+  //     typeof msg === "string" &&
+  //     msg.trim().length === 0 &&
+  //     msg === undefined &&
+  //     !message?.msg
+  //   ) {
+  //     return;
+  //   }
+
+  //   const now = new Date();
+  //   const date = now.toLocaleDateString("en-GB", {
+  //     day: "2-digit",
+  //     month: "short",
+  //     year: "numeric",
+  //   });
+  //   const time = now.toLocaleTimeString("en-GB", {
+  //     hour: "2-digit",
+  //     minute: "2-digit",
+  //     hour12: true,
+  //   });
+
+  //   const newMessage: TMessage = {
+  //     type: message.type || "string"
+  //     sender: message?.sender || "user",
+  //     msg: message?.msg || msg,
+  //     date,
+  //     time,
+  //   };
+
+  //   setMessages((prevMessages) => [...prevMessages, newMessage]);
+  //   localStorage.setItem("messages", JSON.stringify(messages));
+  //   setMsg(""); // Reset msg after sending
+
+  //   if (newMessage.sender === "user" && typeof newMessage.msg === "string") {
+  //     const res = await Kaira(name, email, newMessage.msg);
+  //     if (res && res.msg !== "null") {
+  //       const adminMsg: TMessage = {
+  //         ...res,
+  //         time,
+  //         date,
+  //       };
+  //       setMessages((prevMessages) => [...prevMessages, adminMsg]);
+  //     }
+  //   }
+  // };
+
   const sendMsg = async (message?: msgProps) => {
     if (!name || !email) {
       if (dialogRef.current) {
@@ -78,8 +136,6 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
       }
       return;
     }
-    // Only proceed if msg is valid
-    debugger;
     if (
       typeof msg === "string" &&
       msg.trim().length === 0 &&
@@ -102,6 +158,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
     });
 
     const newMessage: TMessage = {
+      type: message?.type || "string", // Added type handling
       sender: message?.sender || "user",
       msg: message?.msg || msg,
       date,
@@ -112,13 +169,18 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
     localStorage.setItem("messages", JSON.stringify(messages));
     setMsg(""); // Reset msg after sending
 
-    if (newMessage.sender === "user" && typeof newMessage.msg === "string") {
+    if (
+      newMessage.sender === "user" &&
+      typeof newMessage.msg === "string" &&
+      newMessage.type === "string"
+    ) {
       const res = await Kaira(name, email, newMessage.msg);
       if (res && res.msg !== "null") {
         const adminMsg: TMessage = {
           ...res,
           time,
           date,
+          type: "string", // Ensure the message type is correct
         };
         setMessages((prevMessages) => [...prevMessages, adminMsg]);
       }
