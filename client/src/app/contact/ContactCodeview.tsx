@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useMessengerContext } from "./Messenger/provider";
 /* const codeString = `
@@ -16,7 +17,7 @@ button.addEventListener('click', () => {
 `;
  */
 const ContactCodeview = () => {
-  const { msg, name, email } = useMessengerContext()
+  const { msg, name, email } = useMessengerContext();
   return (
     <code className="grow  w-full p-4 mt-12 hidden lg:block">
       <span className="mr-4">1</span>
@@ -50,18 +51,16 @@ const ContactCodeview = () => {
       <span className="mr-4">6</span>
       <span className="text-s3 pl-12">message</span>:
       <span className="text-a1">&quot;</span>
-      {
-        `${msg}` || ""}
-
+      {`${msg}` || ""}
       <span className="text-a1">&quot;</span>,
       <br />
       <span className="mr-4">7</span>
       <span className="text-s3 pl-12">date</span>:{" "}
       <span className="text-a1">&quot;</span>
-      {new Date().toLocaleString('en-GB', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
+      {new Date().toLocaleString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
       })}
       <span className="text-a1">&quot;</span>,
       <br />
