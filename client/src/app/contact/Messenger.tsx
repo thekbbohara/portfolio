@@ -15,10 +15,11 @@ import UsrInfoDialog from "./usrInfoDialog";
 import MessengerHeader from "./Messenger/header";
 import { useMessengerContext } from "./Messenger/provider";
 import MessengerFooter from "./Messenger/footer";
+import { ThumbUpFilled } from "@/assets/spfyicons";
 
 export interface IMessenger {
-  msg: string | ReactNode;
-  setMsg: Dispatch<SetStateAction<string | ReactNode>>;
+  msg: ReactNode;
+  setMsg: Dispatch<SetStateAction<ReactNode>>;
   name: string;
   setName: Dispatch<SetStateAction<string>>;
   email: string;
@@ -84,70 +85,89 @@ const Messenger = () => {
                     {message.time}
                   </span>
                 )}
-              {Array.isArray(message.msg)
-                ? message.msg.map((reply: string, i) => {
-                    return reply == "null" ? null : (
-                      <div
-                        key={i}
-                        className={cn(
-                          "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col ",
-                          message.sender === "admin"
-                            ? "mr-auto bg-s2"
-                            : "ml-auto bg-s3",
-                        )}
-                      >
-                        <span className=" text-s4 ">
-                          {reply.includes("https://") ? (
-                            <>
-                              {!reply.startsWith("https://") && (
-                                <span>{`${reply.split("https://")[0]}`}</span>
-                              )}
-
-                              <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline"
-                                href={`https://${reply.split("https://")[1].split(" ")[0]}`}
-                              >
-                                {`https://${reply.split("https://")[1].split(" ")[0]}`}
-                              </a>
-                              {reply.split("https://")[1].split(" ")[1] && (
-                                <span>{`${reply.split("https://")[1].split(" ")[1]}`}</span>
-                              )}
-                            </>
-                          ) : (
-                            reply
-                          )}
-                        </span>
-
-                        <span className="text-p3 min-w-fit text-xs opacity-70 ml-auto mt-auto tracking-[-0.09rem] flex items-end justify-end">
-                          {message.time}
-                        </span>
-                      </div>
-                    );
-                  })
-                : message.msg &&
-                  message.msg.toString() != "null" && (
+              {message.type === "array" &&
+                Array.isArray(message.msg) &&
+                message.msg.map((reply: string, i) => {
+                  return reply == "null" ? null : (
                     <div
-                      key={id}
+                      key={i}
                       className={cn(
-                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col",
+                        "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col ",
                         message.sender === "admin"
                           ? "mr-auto bg-s2"
                           : "ml-auto bg-s3",
                       )}
                     >
                       <span className=" text-s4 ">
-                        {React.isValidElement(message.msg)
-                          ? message.msg
-                          : message.msg.toString()}
+                        {reply.includes("https://") ? (
+                          <>
+                            {!reply.startsWith("https://") && (
+                              <span>{`${reply.split("https://")[0]}`}</span>
+                            )}
+
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline"
+                              href={`https://${reply.split("https://")[1].split(" ")[0]}`}
+                            >
+                              {`https://${reply.split("https://")[1].split(" ")[0]}`}
+                            </a>
+                            {reply.split("https://")[1].split(" ")[1] && (
+                              <span>{`${reply.split("https://")[1].split(" ")[1]}`}</span>
+                            )}
+                          </>
+                        ) : (
+                          reply
+                        )}
                       </span>
 
-                      <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto ml-auto tracking-[-0.09rem] flex items-end justify-end">
+                      <span className="text-p3 min-w-fit text-xs opacity-70 ml-auto mt-auto tracking-[-0.09rem] flex items-end justify-end">
                         {message.time}
                       </span>
                     </div>
+                  );
+                })}
+              {message.msg && message.type === "string" && (
+                <div
+                  key={id}
+                  className={cn(
+                    "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col",
+                    message.sender === "admin"
+                      ? "mr-auto bg-s2"
+                      : "ml-auto bg-s3",
                   )}
+                >
+                  <span className=" text-s4 ">
+                    {React.isValidElement(message.msg)
+                      ? message.msg
+                      : message.msg.toString()}
+                  </span>
+                  <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto ml-auto tracking-[-0.09rem] flex items-end justify-end">
+                    {message.time}
+                  </span>
+                </div>
+              )}
+              {message.msg && message.type === "icon" && (
+                <div
+                  key={id}
+                  className={cn(
+                    "leading-5 rounded-2xl max-w-[70%]  py-2 px-3 flex flex-col",
+                    message.sender === "admin"
+                      ? "mr-auto bg-s2"
+                      : "ml-auto bg-s3",
+                  )}
+                >
+                  <span className=" text-s4 ">
+                    {message.msg === "thumbupfilled" && (
+                      <ThumbUpFilled className="text-s4" />
+                    )}
+                  </span>
+                  <span className="text-p3 min-w-fit text-xs opacity-70 mt-auto ml-auto tracking-[-0.09rem] flex items-end justify-end">
+                    {message.time}
+                  </span>
+                </div>
+              )}
             </>
           ))}
         </div>
