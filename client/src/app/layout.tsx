@@ -73,6 +73,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta
+        name="google-site-verification"
+        content="Y1teOFsGvPX9d9RDWe664juNfCYOHMl4BwZYXS4dyhY"
+      />
       <body className={`${jetbrain.className} `}>
         <main className="bg-p2 text-s1 text-ellipsis overflow-hidden min-h-svh w-full flex flex-col justify-between">
           <Header
