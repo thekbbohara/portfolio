@@ -20,9 +20,11 @@ const generationConfig: GenerationConfig = {
   responseSchema: {
     type: SchemaType.OBJECT,
     properties: {
+      type: { type: SchemaType.STRING, enum: ["string", "array", "null"] },
       reply: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
     },
     example: {
+      type: "array",
       reply: [
         "Hey there!",
         "I build web apps using MERN, Next.js, and Remix.",
@@ -30,7 +32,7 @@ const generationConfig: GenerationConfig = {
         "My services include custom web apps, APIs, and e.",
       ],
     },
-    required: ["reply"],
+    required: ["reply", "type"],
   },
 };
 
@@ -42,19 +44,28 @@ const model = genAI.getGenerativeModel({
 export async function chat(
   parts: Content[],
   userMessage?: string,
-): Promise<string[]> {
+): Promise<{
+  reply: string[] | string;
+  type: "string" | "null" | "array";
+}> {
   const res = await model.generateContent({
     contents: parts,
     generationConfig,
   });
   // Extract the 'reply' array from the response
   try {
-    const botResponses: { reply: string[] } = JSON.parse(res.response.text());
+    const botResponses: {
+      reply: string[] | string;
+      type: "string" | "null" | "array";
+    } = JSON.parse(res.response.text());
     // console.log(botResponses);
-    return botResponses.reply;
+    return botResponses;
   } catch {
     // console.log("err", "['null']");
-    return ["null"];
+    return {
+      reply: "null",
+      type: "null",
+    };
   }
 }
 

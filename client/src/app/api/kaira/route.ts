@@ -67,7 +67,8 @@ export async function POST(request: Request) {
       );
       await user.save(); // Save the updated chats to the database
     }
-    return Response.json({ sender: "admin", msg: res });
+    console.log({ sender: "admin", msg: res.reply, type: res.type });
+    return Response.json({ sender: "admin", msg: res.reply, type: res.type });
   } catch (error) {
     const e = error as { _message?: string };
     console.log("something went wrong", e?._message);
