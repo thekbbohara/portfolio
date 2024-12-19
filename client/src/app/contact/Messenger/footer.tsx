@@ -56,7 +56,8 @@ const MessengerFooter = () => {
               // Send message with JSX element (ThumbUpFilled icon)
               sendMsg({
                 sender: "user",
-                msg: <ThumbUpFilled className="text-s4" />, // JSX element being sent
+                type: "icon",
+                msg: "thumbupfilled", // JSX element being sent
               });
             }}
           >
