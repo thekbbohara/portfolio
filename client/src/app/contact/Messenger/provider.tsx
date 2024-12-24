@@ -10,6 +10,8 @@ import {
   useRef,
   useEffect,
 } from "react";
+import { type Socket } from "socket.io-client";
+import { useSocket } from "./useSocket";
 // Create the context with a default value of undefined
 const MessengerContext = createContext<IMessengerContext | undefined>(
   undefined,
@@ -62,7 +64,7 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
   const [email, setEmail] = useState<string>("");
   const [messages, setMessages] = useState<TMessage[]>([]);
   const dialogRef = useRef<null | HTMLDialogElement>(null);
-
+  const socket: Socket | undefined = useSocket();
   useEffect(() => {
     setMessages(JSON.parse(localStorage.getItem("messages")!) || []);
     setName(localStorage.getItem("name") || "");
@@ -73,61 +75,6 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
     if (messages.length === 0) return;
     localStorage.setItem("messages", JSON.stringify(messages));
   }, [messages]);
-
-  // const sendMsg = async (message?: msgProps) => {
-  //   if (!name || !email) {
-  //     if (dialogRef.current) {
-  //       dialogRef.current.showModal();
-  //     }
-  //     return;
-  //   }
-  //   // Only proceed if msg is valid
-  //   debugger;
-  //   if (
-  //     typeof msg === "string" &&
-  //     msg.trim().length === 0 &&
-  //     msg === undefined &&
-  //     !message?.msg
-  //   ) {
-  //     return;
-  //   }
-
-  //   const now = new Date();
-  //   const date = now.toLocaleDateString("en-GB", {
-  //     day: "2-digit",
-  //     month: "short",
-  //     year: "numeric",
-  //   });
-  //   const time = now.toLocaleTimeString("en-GB", {
-  //     hour: "2-digit",
-  //     minute: "2-digit",
-  //     hour12: true,
-  //   });
-
-  //   const newMessage: TMessage = {
-  //     type: message.type || "string"
-  //     sender: message?.sender || "user",
-  //     msg: message?.msg || msg,
-  //     date,
-  //     time,
-  //   };
-
-  //   setMessages((prevMessages) => [...prevMessages, newMessage]);
-  //   localStorage.setItem("messages", JSON.stringify(messages));
-  //   setMsg(""); // Reset msg after sending
-
-  //   if (newMessage.sender === "user" && typeof newMessage.msg === "string") {
-  //     const res = await Kaira(name, email, newMessage.msg);
-  //     if (res && res.msg !== "null") {
-  //       const adminMsg: TMessage = {
-  //         ...res,
-  //         time,
-  //         date,
-  //       };
-  //       setMessages((prevMessages) => [...prevMessages, adminMsg]);
-  //     }
-  //   }
-  // };
 
   const sendMsg = async (message?: msgProps) => {
     if (!name || !email) {
@@ -174,15 +121,28 @@ export const MessengerProvider = ({ children }: MessengerProviderProps) => {
       typeof newMessage.msg === "string" &&
       newMessage.type === "string"
     ) {
-      const res = await Kaira(name, email, newMessage.msg);
-      if (res && res.msg !== "null") {
+      debugger;
+      if (socket?.connected) {
         const adminMsg: TMessage = {
-          ...res,
           time,
           date,
           type: "string", // Ensure the message type is correct
+          msg: "msg form ws server",
+          sender: "admin",
         };
         setMessages((prevMessages) => [...prevMessages, adminMsg]);
+      } else {
+        const res = await Kaira(name, email, newMessage.msg);
+
+        if (res && res.msg !== "null") {
+          const adminMsg: TMessage = {
+            time,
+            date,
+            type: "string", // Ensure the message type is correct
+            ...res,
+          };
+          setMessages((prevMessages) => [...prevMessages, adminMsg]);
+        }
       }
     }
   };

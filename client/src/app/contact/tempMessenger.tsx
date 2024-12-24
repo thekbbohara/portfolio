@@ -16,8 +16,6 @@ import MessengerHeader from "./Messenger/header";
 import { useMessengerContext } from "./Messenger/provider";
 import MessengerFooter from "./Messenger/footer";
 import { ThumbUpFilled } from "@/assets/spfyicons";
-import { type Socket } from "socket.io-client";
-import { useSocket } from "./Messenger/useSocket";
 
 export interface IMessenger {
   msg: ReactNode;
@@ -32,7 +30,6 @@ const Messenger = () => {
   const { messages, dialogRef } = useMessengerContext();
   const [maxMsgBoxHeight, setMaxMsgBoxHeight] = useState<number>(0);
   const msgBoxRef = useRef<null | HTMLDivElement>(null);
-  const socket: Socket | undefined = useSocket();
   useEffect(() => {
     if (!msgBoxRef.current) return;
     const maxHeight = msgBoxRef.current?.clientHeight;
@@ -70,20 +67,15 @@ const Messenger = () => {
           <p className="flex flex-col text-center leading-4">
             <span>Full-stack developer</span>
             <span>Lives at Kathmandu Nepal</span>
-            <span>{String(socket?.connected)}</span>
           </p>
           <Button theme="ghost" className="py-0 my-2 border-line">
             view-profile
           </Button>
         </div>
-        <div className="flex flex-col gap-2 pb-1 " key={Math.random()}>
+        <div className="flex flex-col gap-2 pb-1 ">
           {messages.map((message, id) => (
             <>
-              {id == 0 && (
-                <span key={id} className="mx-auto">
-                  {message.date}
-                </span>
-              )}
+              {id == 0 && <span className="mx-auto">{message.date}</span>}
               {id >= 1 &&
                 message.msg &&
                 message.msg.toString() != "null" &&
