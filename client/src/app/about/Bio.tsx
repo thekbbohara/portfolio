@@ -7,21 +7,20 @@ const PersonalInfo = () => {
     "/**",
     "* About me",
     "* On a journey of discomfort of my own choosing",
-    "* You can call me kb",
+    "* You can call me kb,",
+    "* But that's not my real name.",
+    "* If you want to know my real name hire me.",
+    "* And when we sign in the contract you'll know my real name.",
     "* imma minimalist",
     "* Love to call myself ambivert",
     "* No caffeine, drinks, or coke for me",
     "* Loves making useful stuff",
-    "* Philosophy: Never complain, and be accountable for what you do, and remember that balance is key to life."
+    "* Philosophy: Never complain, and be accountable for what you do, and remember that balance is key to life.",
   ];
   info.push("*/");
   return (
     <div className="w-full">
-      <SubHeader
-        category={`kb bohara`}
-        className="text-s1"
-        showIcon={false}
-      />
+      <SubHeader category={`kb bohara`} className="text-s1" showIcon={false} />
       <article className="py-4 px-2 sm:py-8 sm:px-10 text-s1">
         {info.map((p, id) => (
           <div key={id} className={cn("flex gap-1 sm:gap-4")}>
