@@ -12,13 +12,12 @@ const ProInfo = () => {
     '* "I use arch btw.",',
     '* "Frameworks: Nextjs, express.js, Hono",',
     '* "Libraries: React, [Zustand, Redux], Zod, React Query,socket.io",',
-    '* "Databases & Caching: MongoDB, Redis",',
-    '* "Styling: tailwind css",',
-    '* "for ui stuff: spfyui, shadcn",',
-    '* "Tools: Git, docker, kitty, spfyui",',
-    '* "school: nothing related to coding",',
-    '* "bootcamp: broadway infosys",',
-    '* "didn\'t went to harvard",',
+    '* "Databases & Caching: Mongodb, mysql, redis",',
+    '* "Styling: Tailwind css, shadcn",',
+    '* "ORM: Prisma"',
+    '* "school: Nothing related to coding",',
+    '* "bootcamp: Broadway infosys (2024 Jul - 2024 dec)",',
+    '* "collage: Didn\'t went to harvard",',
   ];
   info.push("*/");
   return (
