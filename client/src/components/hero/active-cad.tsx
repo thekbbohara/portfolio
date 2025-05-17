@@ -53,7 +53,7 @@ export const ActiveCard = ({
             src={`/assets/${activity.activity}.png`}
             width={75}
             height={75}
-            alt="zed-editor"
+            alt={activity.activity || " "}
             className="w-10"
           />
           <div className="flex flex-col leading-4">
