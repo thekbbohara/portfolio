@@ -36,8 +36,15 @@ const projectData: Iproject[] = [
     href: "https://www.npmjs.com/package/spfyui",
     alt: "spfyui",
     tags: ["nodejs"],
-  }
-  ,
+  },
+  {
+    projectName: "spaced",
+    title: "Remember more, study less. Free, offline, open-source study app with per-card spaced repetition and active recall.",
+    img: "/assets/spaced.png",
+    href: "https://github.com/thekbbohara/spaced",
+    alt: "spaced",
+    tags: ["react-native", "expo", "typescript"],
+  },
 ];
 
 export default function ProjectContainer() {
