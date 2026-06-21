@@ -15,6 +15,14 @@ interface Iproject {
 
 const projectData: Iproject[] = [
   {
+    projectName: "spaced",
+    title: "Remember more, study less. Free, offline, open-source study app with per-card spaced repetition and active recall.",
+    img: "/assets/spaced.png",
+    href: "https://github.com/thekbbohara/spaced",
+    alt: "spaced",
+    tags: ["react-native", "expo", "typescript"],
+  },
+  {
     projectName: "assign-sync",
     title: "Realtime code assignment /sɪŋkrənʌɪˈzeɪʃ(ə)n/ platform.",
     img: "/assets/assign-sync.png",
@@ -36,14 +44,6 @@ const projectData: Iproject[] = [
     href: "https://www.npmjs.com/package/spfyui",
     alt: "spfyui",
     tags: ["nodejs"],
-  },
-  {
-    projectName: "spaced",
-    title: "Remember more, study less. Free, offline, open-source study app with per-card spaced repetition and active recall.",
-    img: "/assets/spaced.png",
-    href: "https://github.com/thekbbohara/spaced",
-    alt: "spaced",
-    tags: ["react-native", "expo", "typescript"],
   },
 ];
 
